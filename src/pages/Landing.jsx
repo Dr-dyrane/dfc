@@ -31,7 +31,7 @@ class Landing extends Component {
 					{/* Include the FcGoogle icon */}
 				</button>
 				<Link to="/signup">
-					<button className="border bg-purple-600 w-96 text-white py-3 px-4 rounded-2xl hover:bg-purple-500">
+					<button className="border bg-purple-600 w-96 text-white py-3 rounded-2xl hover:bg-purple-500">
 						Sign up for free
 					</button>
 				</Link>
