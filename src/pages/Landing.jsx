@@ -22,7 +22,7 @@ class Landing extends Component {
 				<div className="h-1/3"></div>
 				<button
 					onClick={() => context.handleGoogleLogin()}
-					className="w-96 my-3 flex justify-center bg-slate-300 text-slate-700 font-bold py-3 rounded-2xl hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+					className="w-96 my-3 flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 				>
 					<span className="mr-2">
 						<FcGoogle size={24} />
