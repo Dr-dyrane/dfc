@@ -215,6 +215,7 @@ class AuthProvider extends Component {
 			isLogged, // Include isLogged in the context value
 			error,
 			isRegistered,
+			handleSignup: this.handleSignup,
 			handleLogin: this.handleLogin,
 			handleLogout: this.handleLogout,
 			handleGoogleLogin: this.handleGoogleLogin,
