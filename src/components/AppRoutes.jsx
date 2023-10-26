@@ -21,7 +21,14 @@ class AppRoutes extends Component {
 						element={<Landing user={user} isLogged={isLogged} />}
 					/>
 				)}
-				<Route path="/login" element={<Login onLogin={this.handleLogin} />} />
+				{user || isLogged ? (
+					<>
+						<Route path="/login" element={<Home />} />
+					</>
+				) : (
+					<Route path="/login" element={<Login onLogin={this.handleLogin} />} />
+				)}
+
 				<Route path="/signup" element={<Signup />} />
 			</Routes>
 		);
