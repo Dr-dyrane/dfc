@@ -6,18 +6,18 @@ import { FcGoogle } from "react-icons/fc";
 class Landing extends Component {
 	render() {
 		return (
-			<div className="bg-landing bg-cover font-bold h-screen flex flex-col justify-center items-center p-4">
+			<div className="bg-landing bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
 				<img
 					src={dfc_logo}
 					alt="Dyrane's Farm Cast Logo"
-					className="w-24 p-2 h-24 mb-4 rounded-lg bg-slate-800"
+					className="w-20 p-2 h-20 mb-4 rounded-lg bg-slate-900"
 				/>
-				<h1 className="text-4xl text-white mb-4">Dyrane's Farm Cast</h1>
-				<div className="text-center mb-4">
-					<p className="text-lg text-slate-200">
+				<h1 className="text-3xl text-white mb-4">Dyrane's Farm Cast</h1>
+				<div className="text-center mb-4 font-normal text-sm text-slate-200">
+					<p className="">
 						Your Gateway to Weather Wisdom
 					</p>
-					<p className="text-lg text-slate-200">and Green Guidance</p>
+					<p className="">and Green Guidance</p>
 				</div>
 				<div className="h-1/2"></div>
 				<button
@@ -34,7 +34,7 @@ class Landing extends Component {
 						Sign up for free
 					</button>
 				</Link>
-				<p className="text-white my-4">
+				<p className="text-white my-4 font-normal">
 					Already have an account?{" "}
 					<Link to="/login" className="">
 						Log In
