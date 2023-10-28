@@ -77,7 +77,11 @@ class Login extends Component {
 
 							{/* "Login with Google" button */}
 							<button
-								onClick={() => context.handleGoogleLogin()}
+								onClick={() => {
+									context
+										.handleGoogleLogin(email, password)
+										.then(() => this.navigate("/"));
+								}}
 								className="w-full mt-3 flex justify-center bg-slate-300 text-black font-semibold py-2.5 rounded-lg hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 							>
 								<span className="mr-2">
