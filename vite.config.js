@@ -17,12 +17,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: '/dfc_dark.png',
+            src: '/dfc_pwa.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/dfc_dark.png',
+            src: '/dfc_pwa.png',
             sizes: '512x512',
             type: 'image/png',
           },
