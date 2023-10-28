@@ -11,6 +11,7 @@ class Login extends Component {
 			email: "",
 			password: "",
 		};
+		this.navigate = this.props.navigate;
 	}
 
 	handleEmailChange = (e) => {
@@ -29,7 +30,10 @@ class Login extends Component {
 				{(context) => (
 					<div className="bg-modal bg-cover flex flex-col items-center justify-center min-h-screen bg-slate-300 p-4">
 						{/* Close button */}
-						<Link to="/" className="p-4 absolute top-2 left-2 text-black font-bold">
+						<Link
+							to="/"
+							className="p-4 absolute top-2 left-2 text-black font-bold"
+						>
 							Close
 						</Link>
 						{/* Text Logo */}
@@ -58,7 +62,11 @@ class Login extends Component {
 								className="w-full px-4 py-2.5 mb-4 border rounded-lg focus:outline-none focus:ring focus:ring-slate-500"
 							/>
 							<button
-								onClick={() => context.handleLogin(email, password)} // Use the handleLogin function from the context
+								onClick={() => {
+									context
+										.handleLogin(email, password)
+										.then(() => this.navigate("/"));
+								}} // Use the handleLogin function from the context
 								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
 								Continue
