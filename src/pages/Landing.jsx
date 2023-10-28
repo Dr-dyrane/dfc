@@ -16,7 +16,7 @@ class Landing extends Component {
 							className="w-20 p-2 h-20 mb-4 rounded-lg bg-slate-900"
 						/>
 						<h1 className="text-3xl text-white mb-4">Dyrane's Farm Cast</h1>
-						<div className="text-center mb-4 font-normal text-sm text-slate-200">
+						<div className="text-center mb-4 text-sm text-slate-100">
 							<p className="">Your Gateway to Weather Wisdom</p>
 							<p className="">and Green Guidance</p>
 						</div>
@@ -36,7 +36,7 @@ class Landing extends Component {
 								Sign up for free
 							</button>
 						</Link>
-						<p className="text-white my-4 font-normal">
+						<p className="text-white my-4">
 							Already have an account?{" "}
 							<Link to="/login" className="">
 								Log In

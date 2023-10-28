@@ -27,9 +27,9 @@ class Login extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="flex flex-col items-center justify-center min-h-screen bg-slate-300 p-4">
+					<div className="bg-modal bg-cover flex flex-col items-center justify-center min-h-screen bg-slate-300 p-4">
 						{/* Close button */}
-						<Link to="/" className="p-4 absolute top-2 left-2 text-slate-700 font-bold">
+						<Link to="/" className="p-4 absolute top-2 left-2 text-black font-bold">
 							Close
 						</Link>
 						{/* Text Logo */}
