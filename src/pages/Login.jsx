@@ -32,7 +32,7 @@ class Login extends Component {
 						{/* Close button */}
 						<Link
 							to="/"
-							className="p-4 absolute top-2 left-2 text-black font-bold"
+							className="p-4 absolute top-2 left-2 text-white font-bold"
 						>
 							Close
 						</Link>
@@ -41,9 +41,9 @@ class Login extends Component {
 							<img
 								src={dfc_logo}
 								alt="Dyrane's Farm Cast Logo"
-								className="w-10 p-2 h-10 mb-4 rounded-lg bg-slate-900"
+								className="w-10 p-1 h-10 mb-4 rounded-lg bg-slate-900"
 							/>
-							<h1 className="text-4xl font-bold text-slate-900 mb-4">Dfc</h1>
+							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
 						</div>
 						<div className="bg-slate-200 p-6 rounded-lg shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Sign in</h2>
