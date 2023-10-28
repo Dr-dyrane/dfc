@@ -9,7 +9,7 @@ class Landing extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-landing bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
+					<div className="bg-modal bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
 						<img
 							src={dfc_logo}
 							alt="Dyrane's Farm Cast Logo"
