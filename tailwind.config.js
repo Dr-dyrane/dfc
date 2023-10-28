@@ -4,7 +4,6 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				landing: "url('/dfc_land.jpg')",
 				modal: "url('/dfc_bg.jpg')",
 			},
 		},
