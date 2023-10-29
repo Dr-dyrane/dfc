@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import your Firebase auth instance
 import UserProfile from "../components/UserProfie";
+import { Card, Divider, Subtitle, Text } from "@tremor/react";
 
 class Home extends Component {
 	constructor() {
@@ -29,9 +30,12 @@ class Home extends Component {
 				<div>
 					<UserProfile />
 				</div>
-				<div>
-					<p className="text-slate-800">Welcome to Dyrane's farm cast</p>
-				</div>
+				<Card className="rounded-xl">
+					<Text className="text-6xl font-bold text-center mb-10">
+						Dyrane's Farm Cast
+					</Text>
+					<Subtitle className="text-center">Powered by OpenAI, Next.js, Tailwind SS, Tremor</Subtitle>
+				</Card>
 			</div>
 		);
 	}

@@ -9,9 +9,11 @@ Dyrane's Farm Cast is a web application designed to provide essential weather in
 ## Technologies Used
 
 - Frontend: Vite.js with React.js
+- UI/UX : Tailwind css , Tremor
 - Backend: Firebase
 - Weather Data API: OpenWeatherMap
 - Location Data API: Geodb Cities API
+- Recommendations - OpenAI
 - Hosting and Domain: Netlify and dr-dyrane.tech
 
 ## Project Details
