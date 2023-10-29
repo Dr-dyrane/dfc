@@ -27,7 +27,7 @@ class Signup extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="flex bg-modal bg-cover p-4 flex-col items-center justify-center min-h-screen bg-slate-300">
+					<div className="flex bg-gradient-to-br from-blue-700 to-purple-700 bg-cover p-4 flex-col items-center justify-center min-h-screen bg-slate-300">
 						{/* Close button */}
 						<Link
 							to="/"

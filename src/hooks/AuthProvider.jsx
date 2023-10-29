@@ -229,7 +229,7 @@ class AuthProvider extends Component {
 					isOpen={isOfflineModalOpen}
 					ariaHideApp={false}
 					onRequestClose={this.handleCloseOfflineModal}
-					className="flex rounded-xl p-2 bg-modal bg-cover items-center justify-centre h-screen"
+					className="flex rounded-xl p-2 bg-gradient-to-br from-blue-700 to-purple-700 bg-cover items-center justify-centre h-screen"
 				>
 					<div className="p-2 m-20 text-center text-white">
 						<p>You are currently offline. Some features may be limited.</p>

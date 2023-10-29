@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import dfc_logo from "/dfc.png"; // Import your logo file
+import dfc_feat from "/dfc_feat.png"; // Import your logo file
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../hooks/AuthProvider";
@@ -9,7 +10,7 @@ class Landing extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-modal bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
+					<div className="bg-gradient-to-br from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
 						<img
 							src={dfc_logo}
 							alt="Dyrane's Farm Cast Logo"
@@ -20,7 +21,13 @@ class Landing extends Component {
 							<p className="">Your Gateway to Weather Wisdom</p>
 							<p className="">and Green Guidance</p>
 						</div>
-						<div className="h-1/2"></div>
+						<div className="h-1/2">
+						<img
+							src={dfc_feat}
+							alt="Dfc features"
+							className="w-80 p-2 h-80 my-4 rounded-3xl bg-gradient-to-b from-black to-blue-900"
+						/>
+						</div>
 						<button
 							onClick={() => context.handleGoogleLogin()}
 							className="w-96 my-3 flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl hover:bg-green-600 hover:text-white focus:outline-none focus:ring focus:ring-green-600"
