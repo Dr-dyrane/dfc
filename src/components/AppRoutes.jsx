@@ -6,33 +6,22 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 
 function AppRoutes(props) {
-  const navigate = useNavigate();
-  const { user, isLogged } = props;
+	const navigate = useNavigate();
+	const { user, isLogged } = props;
 
-  return (
-    <Routes>
-      {user || isLogged ? (
-        <>
-          <Route path="/" element={<Home />} />
-        </>
-      ) : (
-        <Route path="/" element={<Landing user={user} isLogged={isLogged} />} />
-      )}
-
-      {user || isLogged ? (
-        <>
-          <Route path="/login" element={<Home />} />
-        </>
-      ) : (
-        <Route
-          path="/login"
-          element={<Login onLogin={props.handleLogin} navigate={navigate} />}
-        />
-      )}
-
-      <Route path="/signup" element={<Signup navigate={navigate} />} />
-    </Routes>
-  );
+	return (
+		<Routes>
+			{user || isLogged ? (
+				<>
+					<Route path="/" element={<Home />} />
+				</>
+			) : (
+				<Route path="/" element={<Landing user={user} isLogged={isLogged} />} />
+			)}
+			<Route path="/login" element={<Login navigate={navigate} />} />
+			<Route path="/signup" element={<Signup navigate={navigate} />} />
+		</Routes>
+	);
 }
 
 export default AppRoutes;

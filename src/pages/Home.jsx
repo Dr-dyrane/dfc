@@ -16,7 +16,7 @@ class Home extends Component {
 		onAuthStateChanged(this.auth, (user) => {
 			if (user) {
 				// User is authenticated, fetch doits from Firestore
-				console.log(user);
+				//console.log(user);
 			}
 		});
 	}
