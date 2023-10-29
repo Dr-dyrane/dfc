@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import your Firebase auth instance
 import UserProfile from "../components/UserProfie";
 import { Card, Divider, Subtitle, Text } from "@tremor/react";
+import CityPicker from "../components/CityPicker";
 
 class Home extends Component {
 	constructor() {
@@ -26,7 +27,7 @@ class Home extends Component {
 		const { dfc } = this.state;
 
 		return (
-			<div className="flex flex-col items-center justify-center font-semibold p-10 min-h-screen bg-gradient-to-br from-slate-200 to-slate-100">
+			<div className="flex flex-col items-center justify-center font-semibold p-10 min-h-screen bg-gradient-to-br from-slate-400 to-slate-200">
 				<div>
 					<UserProfile />
 				</div>
@@ -38,7 +39,8 @@ class Home extends Component {
 						Powered by OpenAI, Next.js, Tailwind CSS, Tremor
 					</Subtitle>
 					<Divider className="my-10"></Divider>
-					<Card className="bg-gradient-to-br from-slate-200 to-slate-100 rounded-2xl">
+					<Card className="bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg">
+						<CityPicker />
 					</Card>
 				</Card>
 			</div>
