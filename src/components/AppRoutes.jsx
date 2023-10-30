@@ -4,6 +4,7 @@ import Landing from "../pages/Landing";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import Location from '../pages/Location'; 
 
 function AppRoutes(props) {
 	const navigate = useNavigate();
@@ -14,6 +15,7 @@ function AppRoutes(props) {
 			{user || isLogged ? (
 				<>
 					<Route path="/" element={<Home />} />
+					<Route path="/location/:latitude/:longitude" element={<Location />} />
 				</>
 			) : (
 				<Route path="/" element={<Landing user={user} isLogged={isLogged} />} />

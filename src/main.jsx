@@ -5,7 +5,7 @@ import { AuthProvider } from "./hooks/AuthProvider.jsx";
 import "./assets/index.css";
 import { inject } from '@vercel/analytics';
 
-inject();
+//inject();
 
 const rootElement = document.getElementById("root");
 

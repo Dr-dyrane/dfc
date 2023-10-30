@@ -31,9 +31,8 @@ function CityPicker() {
 	}, [selectedCountry]);
 
 	const handleSelectedCity = (option) => {
-		//console.log(option);
 		setSelectedCity(option);
-		//navigate(`/location/${option?.value.lattitude}/${option?.value.longitude}`)
+		navigate(`/location/${option?.value.latitude}/${option?.value.longitude}`)
 	};
 
 	return (
