@@ -6,7 +6,11 @@ export default {
 		"./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			backgroundImage: {
+				modal: "url('/dfc_bg.jpg')",
+			},
+		},
 	},
 	plugins: [],
 };
