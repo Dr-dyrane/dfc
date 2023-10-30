@@ -9,7 +9,7 @@ class App extends Component {
 			<AuthContext.Consumer>
 				{(context) => (
 					<Router>
-						<div className="min-h-screen flex flex-col">
+						<div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-700 to-purple-700 h-screen">
             <AppRoutes user={context.user} isLogged={context.isLogged} />
 						</div>
 					</Router>
