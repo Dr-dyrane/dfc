@@ -35,7 +35,7 @@ class Home extends Component {
 					<Text className="text-6xl font-bold text-center mb-10">
 						Dyrane's Farm Cast
 					</Text>
-					<Subtitle className="text-xl text-center">
+					<Subtitle className="text-xl text-center text-cyan-200">
 						Powered by OpenAI, Vite, Tailwind CSS, & Tremor
 					</Subtitle>
 					<Divider className="my-10"></Divider>
