@@ -11,26 +11,26 @@ class Landing extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-gradient-to-br from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col lg:flex-row lg:space-x-10 justify-center items-center p-8">
+					<div className="bg-gradient-to-br overflow-hidde from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col lg:flex-row lg:space-x-10 justify-center items-center p-8">
 						<div className="flex flex-col">
 							<div className="flex flex-row items-center space-x-4">
 								<img
 									src={dfc_logo}
 									alt="Dyrane's Farm Cast Logo"
-									className="w-28 p-2 h-28 mb-4 rounded-lg bg-slate-900 shadow-lg shadow-blue-500/50"
+									className="w-24 p-2 h-24 mb-4 rounded-lg bg-slate-900 shadow-lg shadow-blue-500/50"
 								/>
 								<div className="">
-									<h1 className="text-5xl text-white mb-4">Dyrane's Farm</h1>
-									<h1 className="text-5xl text-white mb-4">Cast</h1>
+									<h1 className="text-4xl text-white mb-4">Dyrane's Farm</h1>
+									<h1 className="text-4xl text-white mb-4">Cast</h1>
 								</div>
 							</div>
 
 							<div className="text-start my-4 text-2xl text-slate-100">
-								<p className="text-cyan-100">Your Gateway to Weather Wisdom</p>
-								<p className="text-green-100">& Green Guidance</p>
+								<p className="text-cyan-300">Your Gateway to Weather Wisdom</p>
+								<p className="text-green-300">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="text-xl max-w-md upper p-8 py-14 text-start h-1/3 my-5 text-white border border-purple-700/10 bg-gradient-to-br from-purple-600 to-blue-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
+						<div className="text-lg max-w-md upper p-8 text-start h-1/3 my-5 text-white border border-purple-700/10 bg-gradient-to-br from-purple-600 to-blue-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
 							<p className="flex flex-row">	<span className="mr-2">
 									<BsCloudSun size={24} color="cyan"/>
 								</span> designed to provide essential weather information</p>
