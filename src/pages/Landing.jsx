@@ -11,7 +11,7 @@ class Landing extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-gradient-to-br overflow-hidde from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col lg:flex-row lg:space-x-10 justify-center items-center p-8">
+					<div className="bg-gradient-to-br overflow-hidde from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col lg:flex-row md:space-x-8 lg:space-x-10 justify-center items-center p-8">
 						<div className="flex flex-col">
 							<div className="flex flex-row items-center space-x-4">
 								<img
@@ -30,14 +30,21 @@ class Landing extends Component {
 								<p className="text-green-300">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="text-clip overflow-hidden text-lg max-w-md upper p-8 text-start h-1/3 my-5 text-white border border-purple-700/10 bg-gradient-to-br from-purple-600 to-blue-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
-							<p className="flex flex-row">	<span className="mr-2">
-									<BsCloudSun size={24} color="cyan"/>
-								</span> designed to provide essential weather information</p>
-							<p className="flex flex-row mt-4">	<span className="mr-2">
-									<GiFarmer size={24} color="cyan"/>
+						<div className="text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 text-white border border-purple-700/10 bg-gradient-to-br from-purple-600 to-blue-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
+							<p className="flex flex-row">
+								{" "}
+								<span className="mr-2">
+									<BsCloudSun size={24} color="cyan" />
+								</span>{" "}
+								Designed to provide essential weather information
+							</p>
+							<p className="text-center">&</p>
+							<p className="flex flex-row">
+								{" "}
+								<span className="mr-2">
+									<GiFarmer size={24} color="cyan" />
 								</span>
-							 tailored agricultural recommendations to empower farmers and
+								Tailored agricultural recommendations to empower farmers and
 								agriculture enthusiasts in making informed decisions
 							</p>
 						</div>
@@ -65,7 +72,6 @@ class Landing extends Component {
 								</Link>
 							</p>
 						</div>
-
 					</div>
 				)}
 			</AuthContext.Consumer>
