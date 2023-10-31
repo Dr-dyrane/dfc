@@ -15,7 +15,7 @@ function AppRoutes(props) {
 			{user || isLogged ? (
 				<>
 					<Route path="/" element={<Home />} />
-					<Route path="/location/:latitude/:longitude" element={<Location />} />
+					<Route path="/location/:name/:latitude/:longitude" element={<Location />} />
 				</>
 			) : (
 				<Route path="/" element={<Landing user={user} isLogged={isLogged} />} />

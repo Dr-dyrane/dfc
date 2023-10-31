@@ -32,7 +32,7 @@ function CityPicker() {
 
 	const handleSelectedCity = (option) => {
 		setSelectedCity(option);
-		navigate(`/location/${option?.value.latitude}/${option?.value.longitude}`)
+		navigate(`/location/${option?.value.name}/${option?.value.latitude}/${option?.value.longitude}`)
 	};
 
 	return (

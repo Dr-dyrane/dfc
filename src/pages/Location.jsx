@@ -3,12 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'; // Import the back arrow icon
 
 function Location() {
-  const { latitude, longitude } = useParams();
+  const {name, latitude, longitude } = useParams();
 
   return (
     <div className="text-slate-200 p-4 min-h-screen">
       <h1 className="text-2xl font-semibold mb-4">Location Details</h1>
       <div className="p-6 rounded shadow-md">
+      <p className="text-lg">
+          City: <span className="font-semibold">{name}</span>
+        </p>
         <p className="text-lg">
           Latitude: <span className="font-semibold">{latitude}</span>
         </p>
