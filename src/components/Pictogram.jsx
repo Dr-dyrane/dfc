@@ -2,7 +2,6 @@ import React from "react";
 import {
 	RiTempHotFill,
 	RiWaterFlashFill,
-	RiUmbrellaFill,
 	RiWindyFill,
 } from "react-icons/ri";
 
