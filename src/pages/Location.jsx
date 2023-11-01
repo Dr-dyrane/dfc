@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi"; // Import the back arrow icon
-import WeatherPictogram from "../components/WeatherPictogram"; // Import the WeatherPictogram component
+import { FaMapMarkedAlt, FaGlobeAmericas } from "react-icons/fa"; // Import the back arrow icon
+import WeatherPictogram from "../components/Pictogram"; // Import the WeatherPictogram component
+import { Card } from "@tremor/react";
 
 function Location() {
 	const { name, latitude, longitude } = useParams();
@@ -24,32 +26,25 @@ function Location() {
 	}, [latitude, longitude]);
 
 	return (
-		<div className="text-slate-200 p-4 min-h-screen">
-			<h1 className="text-2xl font-semibold mb-4">Location Details</h1>
-			<div className="p-6 rounded shadow-md">
-				<p className="text-lg">
-					City: <span className="font-semibold">{name}</span>
-				</p>
-				<p className="text-lg">
-					Latitude: <span className="font-semibold">{latitude}</span>
-				</p>
-				<p className="text-lg">
-					Longitude: <span className="font-semibold">{longitude}</span>
-				</p>
+		<div className="text-cyan-200 p-4 min-h-screen">
+			<Card className="rounded-3xl bg-gradient-to-br text-cyan-300 from-black to-blue-800 max-w-3xl shadow-md">
+				<div className="">
+					<div className="font-semibold text-xl text-center">{name}</div>
+				</div>
 
 				{weatherData ? (
 					<div>
 						<WeatherPictogram weatherData={weatherData} />
 					</div>
 				) : (
-					<p className="text-lg mt-4">Loading weather data...</p>
+					<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
 				)}
 
-				<Link to="/" className="flex items-center mt-4">
-					<FiArrowLeft className="mr-2" />
+				<Link to="/" className="flex items-center mt-4 font-bold justify-center">
+					<FiArrowLeft className="mr-2 text-2xl p-1 bg-cyan-300 text-black rounded-full" />
 					Back to Home
 				</Link>
-			</div>
+			</Card>
 		</div>
 	);
 }
