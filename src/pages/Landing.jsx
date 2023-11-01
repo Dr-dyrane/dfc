@@ -30,7 +30,7 @@ class Landing extends Component {
 								<p className="text-green-300">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 text-white border border-purple-700/10 bg-gradient-to-br from-purple-600 to-blue-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
+						<div className="text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 text-white border border-purple-700/10 bg-gradient-to-br from-blue-600 to-purple-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
 							<p className="flex flex-row">
 								{" "}
 								<span className="mr-2">
