@@ -42,7 +42,7 @@ function Location() {
 		<div className="text-cyan-200 p-4 min-h-screen flex flex-1 items-center justify-center">
 			<Card className="rounded-3xl bg-gradient-to-br text-cyan-300 from-black to-blue-800 max-w-3xl shadow-md">
 				<div className="">
-					<Text className="font-semibold text-xl text-center">{name}</Text>
+					<Text className="font-semibold text-4xl text-center">{name}</Text>
 					<Subtitle className="text-sm text-center text-cyan-200">
 						{formattedDate}
 					</Subtitle>
