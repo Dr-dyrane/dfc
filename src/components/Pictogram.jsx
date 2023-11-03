@@ -53,7 +53,7 @@ const WeatherPictogram = ({ weatherData }) => {
 			  <div className="text-2xl text-blue-400">
 				<RiSunCloudyFill size={38}/>
 			  </div>
-			  <p className="text-md">{weatherDescription}</p>
+			  <p className="text-md justify-center">{weatherDescription}</p>
 			</div>
 		  </div>
 		</div>
