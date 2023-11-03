@@ -1,50 +1,64 @@
 import React from "react";
-import { RiSunCloudyFill, RiTempHotFill, RiWaterFlashFill, RiWindyFill } from "react-icons/ri";
+import {
+	RiSunCloudyFill,
+	RiTempHotFill,
+	RiWaterFlashFill,
+	RiWindyFill,
+} from "react-icons/ri";
 import { translateWeatherCode } from "../utils/weatherCodeTranslator";
 
 const WeatherPictogram = ({ weatherData }) => {
 	if (!weatherData) {
-		return null;
+	  return null;
 	}
-
+  
 	const temperature = weatherData.current.temperature_2m;
 	const humidity = weatherData.current.relativehumidity_2m;
 	const windSpeed = weatherData.current.windspeed_10m;
 	const weatherCode = weatherData.current.weathercode;
-
-	// Translate the weather code into a description
 	const weatherDescription = translateWeatherCode(weatherCode);
-
+  
 	return (
-		<div className="p-4 m-4 rounded-2xl font-bold shadow-lg bg-blue-800">
-			<div className="flex items-center justify-between space-x-4 p-4">
-				<div className="text-2xl text-yellow-400">
-					<RiTempHotFill />
-				</div>
-				<p className="text-lg">{temperature} °C</p>
+	  <div className="p-2 m-2 rounded-2xl font-bold shadow-l">
+		<div className="grid grid-cols-2 gap-4">
+		  <div className="p-4 rounded-2xl font-bold shadow-lg bg-blue-800">
+			<div className="flex flex-col items-center justify-between space-y-4">
+			  <div className="text-2xl text-yellow-400">
+				<RiTempHotFill size={38}/>
+			  </div>
+			  <p className="text-md">{temperature} °C</p>
 			</div>
-
-			<div className="flex items-center justify-between space-x-4 p-4">
-				<div className="text-2xl text-blue-400">
-					<RiWaterFlashFill />
-				</div>
-				<p className="text-lg">{humidity} %</p>
+		  </div>
+  
+		  <div className="p-4 rounded-2xl font-bold shadow-lg bg-blue-800">
+			<div className="flex flex-col items-center justify-between space-y-4">
+			  <div className="text-2xl text-blue-400">
+				<RiWaterFlashFill size={38}/>
+			  </div>
+			  <p className="text-md">{humidity} %</p>
 			</div>
-
-			<div className="flex items-center justify-between space-x-4 p-4">
-				<div className="text-2xl text-purple-400">
-					<RiWindyFill />
-				</div>
-				<p className="text-lg">{windSpeed} km/h</p>
+		  </div>
+  
+		  <div className="p-4 rounded-2xl font-bold shadow-lg bg-blue-800">
+			<div className="flex flex-col items-center justify-between space-y-4">
+			  <div className="text-2xl text-purple-400">
+				<RiWindyFill size={38}/>
+			  </div>
+			  <p className="text-md">{windSpeed} km/h</p>
 			</div>
-			<div className="flex items-center justify-between space-x-4 p-4">
-				<div className="text-2xl text-blue-400">
-					<RiSunCloudyFill />
-				</div>
-				<p className="text-lg">{weatherDescription}</p>
+		  </div>
+  
+		  <div className="p-4 rounded-2xl font-bold shadow-lg bg-blue-800">
+			<div className="flex flex-col items-center justify-between space-y-4">
+			  <div className="text-2xl text-blue-400">
+				<RiSunCloudyFill size={38}/>
+			  </div>
+			  <p className="text-md">{weatherDescription}</p>
 			</div>
+		  </div>
 		</div>
+	  </div>
 	);
-};
-
-export default WeatherPictogram;
+  };
+  
+  export default WeatherPictogram;
