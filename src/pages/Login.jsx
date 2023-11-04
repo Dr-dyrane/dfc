@@ -29,14 +29,6 @@ class Login extends Component {
 			<AuthContext.Consumer>
 				{(context) => (
 					<div className="bg-gradient-to-br from-blue-700 to-purple-700 bg-cover flex flex-col items-center justify-center min-h-screen p-4">
-						{/* Close button */}
-						<Link
-							to="/"
-							className="p-4 absolute top-2 left-2 text-white font-bold"
-						>
-							Close
-						</Link>
-						{/* Text Logo */}
 						<div className="flex space-x-2">
 							<img
 								src={dfc_logo}
