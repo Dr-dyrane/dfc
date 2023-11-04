@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import dfc_logo from "/dfc.png";
 import { Text } from "@tremor/react";
 import { AuthContext } from "../hooks/AuthProvider";
 
-const Navbar = (props) => {
+const Navbar = () => {
+	const navigate = useNavigate();
 	return (
 		<AuthContext.Consumer>
 			{(context) => (
@@ -38,6 +39,7 @@ const Navbar = (props) => {
 											);
 											if (shouldLogout) {
 												context.handleLogout();
+												navigate('/');
 											}
 											// Handle the click event to open the user profile modal or page
 											// Example: You can set a state to control the modal visibility

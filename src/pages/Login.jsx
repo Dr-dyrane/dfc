@@ -37,7 +37,7 @@ class Login extends Component {
 							/>
 							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
 						</div>
-						<div className="bg-slate-200 p-6 rounded-lg shadow-lg">
+						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-lg shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Sign in</h2>
 							<input
 								type="text"
@@ -84,14 +84,14 @@ class Login extends Component {
 							</button>
 
 							{/* Link to Sign Up page with pre-filled data */}
-							<p className="mt-4 text-gray-500 text-sm">
+							<p className="mt-4 text-gray-500 text-sm font-semibold">
 								New user?{" "}
 								<Link
 									to={{
 										pathname: "/signup",
 										state: { email, password }, // Pass the email and password as state
 									}}
-									className="text-blue-500 hover:underline"
+									className="text-blue-400 hover:underline"
 								>
 									Create an account
 								</Link>

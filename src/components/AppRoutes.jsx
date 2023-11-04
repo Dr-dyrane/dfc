@@ -21,6 +21,7 @@ function AppRoutes(props) {
 				<Route path="/" element={<Landing user={user} isLogged={isLogged} />} />
 			)}
 			<Route path="/login" element={<Login navigate={navigate} />} />
+			<Route path="/location/:name/:latitude/:longitude" element={<Location />} />
 			<Route path="/signup" element={<Signup navigate={navigate} />} />
 		</Routes>
 	);

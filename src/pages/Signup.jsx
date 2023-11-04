@@ -37,7 +37,7 @@ class Signup extends Component {
 							/>
 							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
 						</div>
-						<div className="bg-slate-200 p-6 rounded-lg shadow-lg">
+						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-lg shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Create an account</h2>
 							<input
 								type="text"
@@ -67,7 +67,7 @@ class Signup extends Component {
 								<p className="text-red-500 mt-2">{context.error}</p>
 							)}
 							<p
-								className={`mt-4 text-gray-500 text-sm ${
+								className={`mt-4 text-gray-500 text-sm font-semibold ${
 									context.isRegistered ? "text-green-500" : ""
 								}`}
 							>
@@ -76,7 +76,7 @@ class Signup extends Component {
 									: "Already have an account? "}
 								<Link
 									to={context.isRegistered ? "/" : "/login"}
-									className="text-blue-500 hover:underline"
+									className="text-blue-400 hover:underline"
 								>
 									{context.isRegistered ? "Home" : "Login"}
 								</Link>
