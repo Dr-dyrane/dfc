@@ -5,54 +5,36 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../hooks/AuthProvider";
 import { BsCloudSun } from "react-icons/bs";
 import { GiFarmer } from "react-icons/gi";
+import Feature from "../components/Feature";
 
 class Landing extends Component {
 	render() {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-gradient-to-br overflow-hidde from-blue-700 to-purple-700 bg-cover font-bold h-screen flex flex-col lg:flex-row md:space-x-8 lg:space-x-10 justify-center items-center p-8">
+					<div className="bg-gradient-to-br overflow-hidde from-blue-200 to-purple-200 bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
 						<div className="flex flex-col">
-							<div className="flex flex-row items-center space-x-4">
-								<img
-									src={dfc_logo}
-									alt="Dyrane's Farm Cast Logo"
-									className="w-24 p-2 h-24 mb-4 rounded-lg bg-slate-900 shadow-lg shadow-blue-500/50"
-								/>
+							<div className="items-center justify-center">
 								<div className="">
-									<h1 className="text-4xl text-white mb-4">Dyrane's Farm</h1>
-									<h1 className="text-4xl text-white mb-4">Cast</h1>
+									<h1 className="text-start md:text-center text-6xl md:text-7xl lg:text-8xl text-black mb-4">
+										Dyrane's Farm Cast
+									</h1>
 								</div>
 							</div>
 
-							<div className="text-start my-4 text-2xl text-slate-100">
-								<p className="text-cyan-300">Your Gateway to Weather Wisdom</p>
-								<p className="text-green-300">& Green Guidance</p>
+							<div className="text-start sm:text-center my-4 text-2xl md:text-3xl lg:text-4xl text-slate-900">
+								<p className="">Your Gateway to Weather Wisdom</p>
+								<p className="">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 text-white border border-purple-700/10 bg-gradient-to-br from-blue-600 to-purple-600 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
-							<p className="flex flex-row">
-								{" "}
-								<span className="mr-2">
-									<BsCloudSun size={24} color="cyan" />
-								</span>{" "}
-								Designed to provide essential weather information
-							</p>
-							<p className="text-center">&</p>
-							<p className="flex flex-row">
-								{" "}
-								<span className="mr-2">
-									<GiFarmer size={24} color="cyan" />
-								</span>
-								Tailored agricultural recommendations to empower farmers and
-								agriculture enthusiasts in making informed decisions
-							</p>
+						<div className="text-black text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 border border-purple-200/10 bg-gradient-to-br from-blue-200 to-purple-200 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
+							<Feature />
 						</div>
 
-						<div>
+						<div className="md:flex md:space-x-8 justify-items-center">
 							<button
 								onClick={() => context.handleGoogleLogin()}
-								className="w-96 my-3 flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl hover:bg-green-600 hover:text-white focus:outline-none focus:ring focus:ring-green-600 shadow-lg shadow-blue-500/50"
+								className="border border-slate-700 w-96 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />
@@ -61,13 +43,13 @@ class Landing extends Component {
 								{/* Include the FcGoogle icon */}
 							</button>
 							<Link to="/signup">
-								<button className="border w-96 text-white py-3 rounded-2xl hover:bg-slate-200 hover:text-slate-600 shadow-lg shadow-blue-500/50">
+								<button className="bg-slate-900 w-96 md:w-52 md:my-auto text-white py-3 rounded-2xl md:rounded-3xl hover:bg-slate-200 hover:text-slate-700 shadow-sm shadow-slate-500/50">
 									Sign up for free
 								</button>
 							</Link>
-							<p className="text-white text-center my-4">
+							<p className="text-black text-center my-4 md:my-auto md:w-58">
 								Already have an account?{" "}
-								<Link to="/login" className="text-cyan-300">
+								<Link to="/login" className="text-blue-700">
 									Log In
 								</Link>
 							</p>

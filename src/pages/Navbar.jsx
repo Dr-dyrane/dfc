@@ -28,7 +28,7 @@ const Navbar = () => {
 					</li>
 					<li>
 						<Link to="/signup" className="text-white p-2">
-							Signup
+							Sign up
 						</Link>
 					</li>
 				</ul>
