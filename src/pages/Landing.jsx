@@ -14,25 +14,25 @@ class Landing extends Component {
 						<div className="flex flex-col">
 							<div className="items-center justify-center">
 								<div className="">
-									<h1 className="text-start md:text-center text-6xl md:text-7xl lg:text-8xl text-black mb-4">
+									<h1 className="font-extrabold text-start md:text-center text-5xl md:text-7xl lg:text-8xl text-black mb-4">
 										Dyrane's Farm Cast
 									</h1>
 								</div>
 							</div>
 
-							<div className="text-start sm:text-center my-4 text-2xl md:text-3xl lg:text-4xl text-slate-900">
+							<div className="text-start font-extrabold sm:text-center my-4 text-xl md:text-3xl lg:text-4xl text-slate-900">
 								<p className="">Your Gateway to Weather Wisdom</p>
 								<p className="">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="p-4 overflow-y-auto">
+						<div className="overflow-y-scroll">
 							<Feature />
 						</div>
 
 						<div className="md:flex md:space-x-8 justify-items-center">
 							<button
 								onClick={() => context.handleGoogleLogin()}
-								className="border border-slate-700 w-96 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
+								className="border border-slate-700 w-80 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />
@@ -41,11 +41,11 @@ class Landing extends Component {
 								{/* Include the FcGoogle icon */}
 							</button>
 							<Link to="/signup">
-								<button className="bg-slate-900 w-96 md:w-52 md:my-auto text-white py-3 rounded-2xl md:rounded-3xl hover:bg-slate-200 hover:text-slate-700 shadow-sm shadow-slate-500/50">
+								<button className="bg-slate-900 w-80 md:w-52 md:my-auto text-white py-3 rounded-2xl md:rounded-3xl hover:bg-slate-200 hover:text-slate-700 shadow-sm shadow-slate-500/50">
 									Sign up for free
 								</button>
 							</Link>
-							<p className="text-black text-center my-4 md:my-auto md:w-58">
+							<p className="text-black text-center mt-4 md:my-auto md:w-58">
 								Already have an account?{" "}
 								<Link to="/login" className="text-blue-700">
 									Log In
