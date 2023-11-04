@@ -74,7 +74,7 @@ class Login extends Component {
 										.handleGoogleLogin(email, password)
 										.then(() => this.navigate("/"));
 								}}
-								className="w-full mt-3 flex justify-center bg-slate-300 text-black font-semibold py-2.5 rounded-lg hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+								className="w-full border border-slate-700 mt-3 flex justify-center bg-slate-300 text-black font-semibold py-2.5 rounded-lg hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />
