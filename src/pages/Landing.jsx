@@ -3,8 +3,6 @@ import dfc_logo from "/dfc.png"; // Import your logo file
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../hooks/AuthProvider";
-import { BsCloudSun } from "react-icons/bs";
-import { GiFarmer } from "react-icons/gi";
 import Feature from "../components/Feature";
 
 class Landing extends Component {
@@ -27,7 +25,7 @@ class Landing extends Component {
 								<p className="">& Green Guidance</p>
 							</div>
 						</div>
-						<div className="text-black text-clip overflow-hidden text-lg max-w-md upper p-8 text-start my-5 border border-purple-200/10 bg-gradient-to-br from-blue-200 to-purple-200 mb-24 rounded-3xl shadow-lg shadow-blue-500/50 ">
+						<div className="p-4 overflow-y-auto">
 							<Feature />
 						</div>
 
