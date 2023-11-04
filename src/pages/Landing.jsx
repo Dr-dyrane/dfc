@@ -29,10 +29,10 @@ class Landing extends Component {
 							<Feature />
 						</div>
 
-						<div className="md:flex md:space-x-8 justify-items-center">
+						<div className="sm:pt-4 md:flex md:space-x-8 justify-items-center">
 							<button
 								onClick={() => context.handleGoogleLogin()}
-								className="border border-slate-700 w-80 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
+								className="border border-slate-700 w-80 sm:w-96 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />
@@ -41,7 +41,7 @@ class Landing extends Component {
 								{/* Include the FcGoogle icon */}
 							</button>
 							<Link to="/signup">
-								<button className="bg-slate-900 w-80 md:w-52 md:my-auto text-white py-3 rounded-2xl md:rounded-3xl hover:bg-slate-200 hover:text-slate-700 shadow-sm shadow-slate-500/50">
+								<button className="bg-slate-900 w-80 sm:w-96 md:w-52 md:my-auto text-white py-3 rounded-2xl md:rounded-3xl hover:bg-slate-200 hover:text-slate-700 shadow-sm shadow-slate-500/50">
 									Sign up for free
 								</button>
 							</Link>
