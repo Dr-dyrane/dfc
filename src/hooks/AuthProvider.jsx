@@ -116,7 +116,7 @@ class AuthProvider extends Component {
 			);
 			// User logged in successfully
 			const user = userCredential.user;
-			console.log("User logged in:", user);
+			console.log("User logged in.");
 		} catch (error) {
 			// Handle login errors
 			console.error("Error during login:", error.code, error.message);

@@ -48,8 +48,8 @@ function Location() {
 	return (
 		<div className="min-h-screen overflow-y-auto flex-1 md:flex flex-col md:flex-row items-center justify-center">
 			<div className="text-white p-10">
-				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-72 md:h-72">
-					<div className="md:p-10">
+				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[19.75rem] md:h-[19.75rem]">
+					<div className="md:p-16">
 						<Text className="font-semibold text-4xl text-center">{name}</Text>
 						<Pill weatherData={weatherData} />
 						<Subtitle className="text-xs mt-1 text-center">
