@@ -42,7 +42,7 @@ const Forecast = ({ weatherData }) => {
 					className="grid grid-cols-5 gap-4 px-2 justify-between items-center"
 				>
 					<div className="col-span-1">
-						<forecast.WeatherIcon size={32} />
+						<forecast.WeatherIcon size={30} />
 					</div>
 					<div className="col-span-2">
 						<h3 className="text-lg font-semibold">{forecast.day}</h3>
