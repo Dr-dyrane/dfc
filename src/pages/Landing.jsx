@@ -10,7 +10,7 @@ class Landing extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-gradient-to-br overflow-hidde from-blue-200 to-purple-200 bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
+					<div className="bg-gradient-to-br from-blue-200 to-purple-200 bg-cover font-bold h-screen flex flex-col justify-center items-center p-8">
 						<div className="flex flex-col">
 							<div className="items-center justify-center">
 								<div className="">
