@@ -8,7 +8,7 @@ const Feature = () => {
         <div className="max-h-80 md:max-h-full overflow-y-auto rounded-2xl">
           <img src="/current_weather.jpg" alt="Current Weather" />
         </div>
-        <h2 className="text-xl font-bold mt-4">Current Weather</h2>
+        <h2 className="text-xl font-bold mt-14">Current Weather</h2>
         <p className="text-gray-600">Get real-time weather updates.</p>
       </div>
 
