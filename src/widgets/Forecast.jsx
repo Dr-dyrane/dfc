@@ -35,28 +35,28 @@ const Forecast = ({ weatherData }) => {
 	});
 
 	return (
-		<div className="">
+		<div className="p-1">
 			{dailyForecasts.slice(1).map((forecast, index) => (
-				<div key={index} className="p-4 border-gray-200 flex justify-between">
-                <div className="flex items-center">
-                    <div className="mr-4">
-                        <forecast.WeatherIcon size={38} />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold">{forecast.day}</h3>
-                        <p className="text-gray-500">{forecast.weatherDescription}</p>
-                    </div>
-                </div>
-                <div className="text-right flex flex-row space-x-2 justify-center items-center">
-                    <p className="text-lg font-semibold">
-                        {forecast.apparentTemperatureMax.toFixed(0)} °C
-                    </p>
-                    <p className="text-lg font-semibold">
-                        {forecast.apparentTemperatureMin.toFixed(0)} °C
-                    </p>
-                </div>
-            </div>
-
+				<div
+					key={index}
+					className="grid grid-cols-5 gap-4 px-2 justify-between items-center"
+				>
+					<div className="col-span-1">
+						<forecast.WeatherIcon size={32} />
+					</div>
+					<div className="col-span-2">
+						<h3 className="text-lg font-semibold">{forecast.day}</h3>
+						<p className="text-gray-500">{forecast.weatherDescription}</p>
+					</div>
+					<div className="col-span-2 grid grid-cols-2 text-right justify-center items-center">
+						<p className="text-lg font-semibold">
+							{forecast.apparentTemperatureMax.toFixed(0)} °C
+						</p>
+						<p className="text-lg font-semibold">
+							{forecast.apparentTemperatureMin.toFixed(0)} °C
+						</p>
+					</div>
+				</div>
 			))}
 		</div>
 	);
