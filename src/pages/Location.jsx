@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi"; // Import the back arrow icon
 import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictogram component
 import { Card, Subtitle, Text } from "@tremor/react";
 import Pill from "../widgets/Pill";
@@ -51,7 +50,7 @@ function Location() {
 			<div className="text-white p-10">
 				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[19.75rem] md:h-[19.75rem]">
 					<div className="md:py-16 md:space-y-4">
-						<Text className="font-semibold flex flex-row items-center justify-center text-4xl text-center">
+						<Text className="font-semibold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
 							{name}
 							<RiUserLocationFill />
 						</Text>
