@@ -52,7 +52,7 @@ function Location() {
 	}, [context.user, latitude, longitude]);
 
 	return (
-		<div className="min-h-screen overflow-y-auto flex-1 flex-col items-center justify-center">
+		<div className="min-h-screen overflow-y-auto flex-1 sm:flex flex-col items-center justify-center">
 			<div className="grid grid-cols-1 sm:grid-cols-2">
 				<div className="text-white p-10">
 					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
