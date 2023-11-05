@@ -35,7 +35,7 @@ class Login extends Component {
 								alt="Dyrane's Farm Cast Logo"
 								className="w-10 p-1 h-10 mb-4 rounded-xl bg-slate-900"
 							/>
-							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
+							<h1 className="text-4xl font-bold text-black mb-4">Dfc</h1>
 						</div>
 						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-xl shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Sign in</h2>
