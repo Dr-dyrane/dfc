@@ -69,10 +69,10 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-10">
-					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
-								<HourlyForecast weatherData={weatherData} />
+								<WeatherPictogram weatherData={weatherData} />
 							</div>
 						) : (
 							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
@@ -80,10 +80,10 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-10">
-					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
-								<WeatherPictogram weatherData={weatherData} />
+								<HourlyForecast weatherData={weatherData} />
 							</div>
 						) : (
 							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
