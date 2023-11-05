@@ -11,7 +11,7 @@ const WeatherPictogram = ({ weatherData }) => {
 		return null;
 	}
 
-	const temperature = weatherData.current.temperature_2m;
+	const temperature = weatherData.current.apparent_temperature;
 	const humidity = weatherData.current.relativehumidity_2m;
 	const windSpeed = weatherData.current.windspeed_10m;
 	const precipitation = weatherData.current.precipitation;
