@@ -1,10 +1,6 @@
 import React from "react";
-import {
-	RiRainyFill,
-	RiTempHotFill,
-	RiWaterFlashFill,
-	RiWindyFill,
-} from "react-icons/ri";
+import { RiTempHotFill, RiWaterFlashFill, RiWindyFill } from "react-icons/ri";
+import { MdVisibility } from "react-icons/md";
 
 const WeatherPictogram = ({ weatherData }) => {
 	if (!weatherData) {
@@ -14,7 +10,7 @@ const WeatherPictogram = ({ weatherData }) => {
 	const temperature = weatherData.current.apparent_temperature;
 	const humidity = weatherData.current.relativehumidity_2m;
 	const windSpeed = weatherData.current.windspeed_10m;
-	const precipitation = weatherData.current.precipitation;
+	const visibility = weatherData.current.visibility;
 
 	return (
 		<div className="p-2 m-2 rounded-2xl font-bold shadow-l">
@@ -49,9 +45,9 @@ const WeatherPictogram = ({ weatherData }) => {
 				<div className="p-4 rounded-2xl font-bold shadow-lg ">
 					<div className="flex flex-col items-center justify-between space-y-4">
 						<div className="text-2xl text-blue-400">
-							<RiRainyFill size={38} style={{ color: 'blue' }}/>
+							<MdVisibility size={38} style={{ color: "blue" }} />
 						</div>
-						<p className="text-md">{precipitation} mm</p>
+						<p className="text-md">{visibility} m/s</p>
 					</div>
 				</div>
 			</div>
