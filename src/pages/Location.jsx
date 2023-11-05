@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi"; // Import the back arrow icon
-import WeatherPictogram from "../components/Pictogram"; // Import the WeatherPictogram component
+import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictogram component
 import { Card, Subtitle, Text } from "@tremor/react";
-import Pill from "../components/Pill";
+import Pill from "../widgets/Pill";
 import { AuthContext } from "../hooks/AuthProvider";
 
 function Location() {
