@@ -55,7 +55,7 @@ function Location() {
 		<div className="min-h-screen overflow-y-auto flex-1 sm:flex flex-col items-center justify-center">
 			<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
 				<div className="text-white p-8">
-					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						<div className="md:py-16 md:space-y-4">
 							<Text className="font-semibold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
 								{name}
@@ -69,7 +69,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-8">
-					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<WeatherPictogram weatherData={weatherData} />
@@ -80,7 +80,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-8">
-					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<HourlyForecast weatherData={weatherData} />
@@ -91,7 +91,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-8">
-					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<Forecast weatherData={weatherData} />
