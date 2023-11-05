@@ -27,11 +27,11 @@ class Home extends Component {
 		const { dfc } = this.state;
 
 		return (
-			<div className="flex flex-col items-center justify-center font-semibold p-10 min-h-screen bg-gradient-to-br from-blue-500 to-purple-400">
+			<div className="flex flex-col items-center justify-center font-semibold p-10 min-h-screen">
 				<div>
 					<UserProfile />
 				</div>
-				<Card className="rounded-3xl bg-gradient-to-br text-slate-100 from-black to-blue-800 max-w-3xl">
+				<Card className="rounded-3xl text-slate-100 bg-slate-900 max-w-3xl">
 					<Text className="text-6xl font-bold text-center mb-10">
 						Dyrane's Farm Cast
 					</Text>
@@ -39,7 +39,7 @@ class Home extends Component {
 						Powered by OpenAI, Vite, Tailwind CSS, & Tremor
 					</Subtitle>
 					<Divider className="my-10"></Divider>
-					<Card className="bg-gradient-to-br from-blue-200 to-purple-300 rounded-lg">
+					<Card className="bg-gradient-to-br from-purple-200 to-blue-200 rounded-lg">
 						<CityPicker />
 					</Card>
 				</Card>

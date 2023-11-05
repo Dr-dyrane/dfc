@@ -12,7 +12,7 @@ class App extends Component {
 				{(context) => (
 					<Router>
 						<Navbar />
-						<div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-700 to-purple-700 h-screen">
+						<div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-200 to-purple-200 h-screen">
 							<AppRoutes user={context.user} isLogged={context.isLogged} />
 						</div>
 						<Footer />

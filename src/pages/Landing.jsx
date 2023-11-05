@@ -32,7 +32,7 @@ class Landing extends Component {
 						<div className="sm:pt-4 md:flex md:space-x-8 justify-items-center">
 							<button
 								onClick={() => context.handleGoogleLogin()}
-								className="border border-slate-700 w-80 sm:w-96 md:w-52 my-3 md:my-auto flex justify-center bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
+								className="border border-slate-700 w-80 sm:w-96 md:w-52 my-3 md:my-auto flex justify-center bg-none text-slate-700 font-bold py-3 rounded-2xl md:rounded-3xl hover:border-blue-700 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring focus:ring-blue-600 shadow-lg shadow-slate-500/50"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />

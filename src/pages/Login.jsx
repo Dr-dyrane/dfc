@@ -28,30 +28,30 @@ class Login extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="bg-gradient-to-br from-blue-700 to-purple-700 bg-cover flex flex-col items-center justify-center min-h-screen p-4">
+					<div className="flex flex-col items-center justify-center min-h-screen p-4">
 						<div className="flex space-x-2">
 							<img
 								src={dfc_logo}
 								alt="Dyrane's Farm Cast Logo"
-								className="w-10 p-1 h-10 mb-4 rounded-lg bg-slate-900"
+								className="w-10 p-1 h-10 mb-4 rounded-xl bg-slate-900"
 							/>
 							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
 						</div>
-						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-lg shadow-lg">
+						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-xl shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Sign in</h2>
 							<input
 								type="text"
 								placeholder="Email"
 								value={email}
 								onChange={this.handleEmailChange}
-								className="w-full px-4 py-2.5 mb-4 border rounded-lg focus:outline-none focus:ring focus:ring-slate-500"
+								className="w-full px-4 py-2.5 mb-4 border rounded-xl focus:outline-none focus:ring focus:ring-slate-500"
 							/>
 							<input
 								type="password"
 								placeholder="Password"
 								value={password}
 								onChange={this.handlePasswordChange}
-								className="w-full px-4 py-2.5 mb-4 border rounded-lg focus:outline-none focus:ring focus:ring-slate-500"
+								className="w-full px-4 py-2.5 mb-4 border rounded-xl focus:outline-none focus:ring focus:ring-slate-500"
 							/>
 							<button
 								onClick={() => {
@@ -59,7 +59,7 @@ class Login extends Component {
 										.handleLogin(email, password)
 										.then(() => this.navigate("/"));
 								}} // Use the handleLogin function from the context
-								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
+								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
 								Continue
 							</button>
@@ -74,7 +74,7 @@ class Login extends Component {
 										.handleGoogleLogin(email, password)
 										.then(() => this.navigate("/"));
 								}}
-								className="w-full border border-slate-700 mt-3 flex justify-center bg-slate-300 text-black font-semibold py-2.5 rounded-lg hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+								className="w-full border border-slate-700 mt-3 flex justify-center bg-none text-black font-semibold py-2.5 rounded-xl hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 							>
 								<span className="mr-2">
 									<FcGoogle size={24} />

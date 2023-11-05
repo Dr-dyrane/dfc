@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi"; // Import the back arrow icon
 import WeatherPictogram from "../components/Pictogram"; // Import the WeatherPictogram component
 import { Card, Subtitle, Text } from "@tremor/react";
 import Pill from "../components/Pill";
+import { AuthContext } from "../hooks/AuthProvider";
 
 function Location() {
 	const { name, latitude, longitude } = useParams();
 	const [weatherData, setWeatherData] = useState(null);
 	const currentDate = new Date();
 	const formattedDate = currentDate.toLocaleString();
+	const context = useContext(AuthContext);
+	const navigate = useNavigate();
 
 	const fetchWeatherData = () => {
 		const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relativehumidity_2m,precipitation,rain,weathercode,windspeed_10m&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,uv_index,uv_index_clear_sky,is_day&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,uv_index_clear_sky_max&timezone=Europe%2FLondon`;
@@ -26,6 +29,9 @@ function Location() {
 
 	// Fetch the initial weather data when the component mounts
 	useEffect(() => {
+		if (!context.user) {
+			navigate('/');
+		}
 		fetchWeatherData();
 	}, [latitude, longitude]);
 

@@ -27,17 +27,17 @@ class Signup extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="flex bg-gradient-to-br from-blue-700 to-purple-700 bg-cover p-4 flex-col items-center justify-center min-h-screen bg-slate-300">
+					<div className="flex p-4 flex-col items-center justify-center min-h-screen">
 						{/* Text Logo */}
 						<div className="flex space-x-2">
 							<img
 								src={dfc_logo}
 								alt="Dyrane's Farm Cast Logo"
-								className="w-10 p-1 h-10 mb-4 rounded-lg bg-slate-900"
+								className="w-10 p-1 h-10 mb-4 rounded-xl bg-slate-900"
 							/>
-							<h1 className="text-4xl font-bold text-white mb-4">Dfc</h1>
+							<h1 className="text-4xl font-bold text-black mb-4">Dfc</h1>
 						</div>
-						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-lg shadow-lg">
+						<div className="bg-gradient-to-br from-blue-200 to-purple-200 p-6 rounded-xl shadow-lg">
 							<h2 className="text-3xl font-bold mb-4">Create an account</h2>
 							<input
 								type="text"
@@ -59,7 +59,7 @@ class Signup extends Component {
 										.handleSignup(email, password)
 										.then(() => this.navigate("/"));
 								}} // Use the handleSignup function from the context
-								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
+								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
 								Continue
 							</button>
@@ -75,10 +75,10 @@ class Signup extends Component {
 									? "Account registration successful, proceed to "
 									: "Already have an account? "}
 								<Link
-									to={context.isRegistered ? "/" : "/login"}
+									to={context.isRegistered || context.user ? "/" : "/login"}
 									className="text-blue-400 hover:underline"
 								>
-									{context.isRegistered ? "Home" : "Login"}
+									{context.isRegistered || context.user ? "Home" : "Login"}
 								</Link>
 							</p>
 						</div>
