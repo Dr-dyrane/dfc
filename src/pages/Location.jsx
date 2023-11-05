@@ -5,7 +5,11 @@ import { Card, Subtitle, Text } from "@tremor/react";
 import Pill from "../widgets/Pill";
 import { AuthContext } from "../hooks/AuthProvider";
 import { RiUserLocationFill } from "react-icons/ri";
-import { fetchWeatherData, startFetchingWeatherPeriodically } from "../api/WeatherData";
+import {
+	fetchWeatherData,
+	startFetchingWeatherPeriodically,
+} from "../api/WeatherData";
+import Forecast from "../widgets/Forecast";
 
 function Location() {
 	const { name, latitude, longitude } = useParams();
@@ -30,15 +34,20 @@ function Location() {
 				console.error("Error fetching weather data:", error);
 			});
 
-		  // Start fetching weather data periodically
-		  const intervalId = startFetchingWeatherPeriodically(latitude, longitude, (data) => {
-			setWeatherData(data);
-		  }, 1); // Set the interval time in minutes
-		
-		  return () => {
+		// Start fetching weather data periodically
+		const intervalId = startFetchingWeatherPeriodically(
+			latitude,
+			longitude,
+			(data) => {
+				setWeatherData(data);
+			},
+			1
+		); // Set the interval time in minutes
+
+		return () => {
 			// Clean up the interval when the component unmounts
 			clearInterval(intervalId);
-		  };
+		};
 	}, [context.user, latitude, longitude]);
 
 	return (
@@ -57,16 +66,29 @@ function Location() {
 					</div>
 				</Card>
 			</div>
-			<div className="text-white px-10">
-				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
-					{weatherData ? (
-						<div>
-							<WeatherPictogram weatherData={weatherData} />
-						</div>
-					) : (
-						<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
-					)}
-				</Card>
+			<div className="flex flex-col lg:flex-row">
+				<div className="text-white p-10">
+					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
+						{weatherData ? (
+							<div>
+								<WeatherPictogram weatherData={weatherData} />
+							</div>
+						) : (
+							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
+						)}
+					</Card>
+				</div>
+				<div className="text-white p-10">
+					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
+						{weatherData ? (
+							<div>
+								<Forecast weatherData={weatherData} />
+							</div>
+						) : (
+							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
+						)}
+					</Card>
+				</div>
 			</div>
 		</div>
 	);
