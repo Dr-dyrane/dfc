@@ -30,7 +30,7 @@ function Location() {
 	// Fetch the initial weather data when the component mounts
 	useEffect(() => {
 		if (!context.user) {
-			navigate('/');
+			navigate("/");
 		}
 		fetchWeatherData();
 	}, [latitude, longitude]);
@@ -46,25 +46,29 @@ function Location() {
 	}, [latitude, longitude]);
 
 	return (
-		<div className="text-white p-10 min-h-screen flex flex-1 items-center justify-center">
-			<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
-				<div className="">
-					<Text className="font-semibold text-4xl text-center">{name}</Text>
-					<Pill weatherData={weatherData} />
-					<Subtitle className="text-xs mt-1 text-center">
-						{formattedDate}
-					</Subtitle>
-					
-				</div>
-
-				{weatherData ? (
-					<div>
-						<WeatherPictogram weatherData={weatherData} />
+		<div className="min-h-screen overflow-y-auto flex-1 md:flex flex-col md:flex-row items-center justify-center">
+			<div className="text-white p-10">
+				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-72 md:h-72">
+					<div className="md:p-10">
+						<Text className="font-semibold text-4xl text-center">{name}</Text>
+						<Pill weatherData={weatherData} />
+						<Subtitle className="text-xs mt-1 text-center">
+							{formattedDate}
+						</Subtitle>
 					</div>
-				) : (
-					<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
-				)}
-			</Card>
+				</Card>
+			</div>
+			<div className="text-white px-10">
+				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
+					{weatherData ? (
+						<div>
+							<WeatherPictogram weatherData={weatherData} />
+						</div>
+					) : (
+						<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
+					)}
+				</Card>
+			</div>
 		</div>
 	);
 }
