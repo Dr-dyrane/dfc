@@ -10,6 +10,7 @@ import {
 	startFetchingWeatherPeriodically,
 } from "../api/WeatherData";
 import Forecast from "../widgets/Forecast";
+import HourlyForecast from "../widgets/HourlyForecast";
 
 function Location() {
 	const { name, latitude, longitude } = useParams();
@@ -51,24 +52,35 @@ function Location() {
 	}, [context.user, latitude, longitude]);
 
 	return (
-		<div className="min-h-screen overflow-y-auto flex-1 md:flex flex-col md:flex-row items-center justify-center">
-			<div className="text-white p-10">
-				<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[19.75rem] md:h-[19.75rem]">
-					<div className="md:py-16 md:space-y-4">
-						<Text className="font-semibold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
-							{name}
-							<RiUserLocationFill />
-						</Text>
-						<Pill weatherData={weatherData} />
-						<Subtitle className="text-xs mt-1 text-center">
-							{formattedDate}
-						</Subtitle>
-					</div>
-				</Card>
-			</div>
-			<div className="flex flex-col lg:flex-row">
+		<div className="min-h-screen overflow-y-auto flex-1 flex-col items-center justify-center">
+			<div className="grid grid-cols-1 sm:grid-cols-2">
 				<div className="text-white p-10">
-					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
+					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+						<div className="md:py-16 md:space-y-4">
+							<Text className="font-semibold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
+								{name}
+								<RiUserLocationFill />
+							</Text>
+							<Pill weatherData={weatherData} />
+							<Subtitle className="text-xs mt-1 text-center">
+								{formattedDate}
+							</Subtitle>
+						</div>
+					</Card>
+				</div>
+				<div className="text-white p-10">
+					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+						{weatherData ? (
+							<div>
+								<HourlyForecast weatherData={weatherData} />
+							</div>
+						) : (
+							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
+						)}
+					</Card>
+				</div>
+				<div className="text-white p-10">
+					<Card className="md:p-16 rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<WeatherPictogram weatherData={weatherData} />
@@ -79,7 +91,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-10">
-					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
+					<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<Forecast weatherData={weatherData} />

@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hourly-forecast-container {
+
+    max-height: 350px; /* Adjust the height as needed */
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: darkgrey lightgrey;
+  }
+  
+  .hourly-forecast-container::-webkit-scrollbar {
+    width: 1px; /* Adjust the width of the scrollbar */
+  }
+  
+  .hourly-forecast-container::-webkit-scrollbar-thumb {
+    background-color: lightgrey; /* Color of the thumb */
+    border-radius: 1px; /* Rounded corners for the thumb */
+  }
+  
+  .hourly-forecast-container::-webkit-scrollbar-track {
+    background-color: darkgrey; /* Color of the track */
+  }
+  
