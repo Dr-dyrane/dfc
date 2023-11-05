@@ -47,7 +47,7 @@ const WeatherPictogram = ({ weatherData }) => {
 						<div className="text-2xl text-blue-400">
 							<MdVisibility size={38} style={{ color: "blue" }} />
 						</div>
-						<p className="text-md">{visibility} m/s</p>
+						<p className="text-md">{visibility} m</p>
 					</div>
 				</div>
 			</div>
