@@ -16,7 +16,7 @@ const Pill = ({ weatherData }) => {
 			<div className="text-2xl p-2 px-3 h-14 rounded-l-2xl bg-blue-700">
 				<WeatherIcon size={38} />
 			</div>
-			<div className="p-3.5 items-center justify-center text-center h-14 rounded-r-2xl flex flex-grow-0">
+			<div className="p-3.5 items-center justify-center text-center h-14 rounded-r-2xl flex md:flex-grow">
 				<p
 					className="text-md"
 					style={{ whiteSpace: "nowrap", overflowX: "auto" }}
