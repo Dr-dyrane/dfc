@@ -37,7 +37,7 @@ function Location() {
 
 	// Fetch updated weather data every 30 minutes (you can adjust the interval)
 	useEffect(() => {
-		const intervalId = setInterval(fetchWeatherData, 30 * 60 * 1000);
+		const intervalId = setInterval(fetchWeatherData, 1 * 60 * 1000);
 
 		return () => {
 			// Clean up the interval when the component unmounts
@@ -46,12 +46,12 @@ function Location() {
 	}, [latitude, longitude]);
 
 	return (
-		<div className="text-cyan-200 p-4 min-h-screen flex flex-1 items-center justify-center">
-			<Card className="rounded-3xl bg-gradient-to-br text-cyan-300 from-black to-blue-800 max-w-3xl shadow-md">
+		<div className="text-white p-10 min-h-screen flex flex-1 items-center justify-center">
+			<Card className="rounded-3xl bg-slate-900 max-w-3xl shadow-md">
 				<div className="">
 					<Text className="font-semibold text-4xl text-center">{name}</Text>
 					<Pill weatherData={weatherData} />
-					<Subtitle className="text-xs mt-1 text-center text-cyan-200">
+					<Subtitle className="text-xs mt-1 text-center">
 						{formattedDate}
 					</Subtitle>
 					
