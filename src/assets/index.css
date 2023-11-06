@@ -4,7 +4,7 @@
 
 .hourly-forecast-container {
 
-    max-height: 350px; /* Adjust the height as needed */
+    max-height: 320px; /* Adjust the height as needed */
     overflow-x: auto;
     overflow-y: auto;
     scrollbar-width: thin;
