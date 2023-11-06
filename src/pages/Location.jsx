@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictogram component
-import { Card, Subtitle, Text } from "@tremor/react";
+import { Card, Subtitle, Text, Title } from "@tremor/react";
 import Pill from "../widgets/Pill";
 import { AuthContext } from "../hooks/AuthProvider";
 import { RiUserLocationFill } from "react-icons/ri";
@@ -70,6 +70,7 @@ function Location() {
 				</div>
 				<div className="text-white p-8">
 					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Title className="text-center text-lg font-bold">Current Weather</Title>
 						{weatherData ? (
 							<div>
 								<WeatherPictogram weatherData={weatherData} />
@@ -81,6 +82,7 @@ function Location() {
 				</div>
 				<div className="text-white p-8">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Title className="text-center text-lg font-bold">Hourly Forecaset</Title>
 						{weatherData ? (
 							<div>
 								<HourlyForecast weatherData={weatherData} />
@@ -92,6 +94,7 @@ function Location() {
 				</div>
 				<div className="text-white p-8">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Title className="text-center text-lg font-bold">Next 6 Days Forecaset</Title>
 						{weatherData ? (
 							<div>
 								<Forecast weatherData={weatherData} />
