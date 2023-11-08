@@ -4,7 +4,7 @@ import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictog
 import { Card, Subtitle, Text, Title } from "@tremor/react";
 import Pill from "../widgets/Pill";
 import { AuthContext } from "../hooks/AuthProvider";
-import { RiUserLocationFill } from "react-icons/ri";
+import { MdOutlineLocationSearching } from "react-icons/md";
 import {
 	fetchWeatherData,
 	startFetchingWeatherPeriodically,
@@ -54,21 +54,21 @@ function Location() {
 	return (
 		<div className="min-h-screen overflow-y-auto flex-1 sm:flex flex-col items-center justify-center">
 			<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-				<div className="text-white p-8">
-					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+				<div className="text-black p-4">
+					<Card className="md:p-16 bd-dfc rounded-2xl max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						<div className="md:py-16 md:space-y-4">
-							<Text className="font-semibold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
+							<Text className="font-bold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
 								{name}
-								<RiUserLocationFill />
+								<MdOutlineLocationSearching className="text-3xl ml-2" />
 							</Text>
 							<Pill weatherData={weatherData} />
-							<Subtitle className="text-xs mt-1 text-center">
+							<Subtitle className="text-xs mt-1 text-center font-bold">
 								{formattedDate}
 							</Subtitle>
 						</div>
 					</Card>
 				</div>
-				<div className="text-white p-8">
+				<div className="text-white p-4">
 					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 					<Title className="text-center text-lg font-bold">Current Weather</Title>
 						{weatherData ? (
@@ -80,7 +80,7 @@ function Location() {
 						)}
 					</Card>
 				</div>
-				<div className="text-white p-8">
+				<div className="text-white p-4">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 					<Title className="text-center text-lg font-bold">Hourly Forecaset</Title>
 						{weatherData ? (
@@ -92,7 +92,7 @@ function Location() {
 						)}
 					</Card>
 				</div>
-				<div className="text-white p-8">
+				<div className="text-white p-4">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 					<Title className="text-center text-lg font-bold">Next 6 Days Forecaset</Title>
 						{weatherData ? (
