@@ -28,7 +28,7 @@ class Login extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="flex flex-col items-center justify-center min-h-screen p-4">
+					<div className="overflow-y-scroll flex flex-col items-center justify-center min-h-screen p-4">
 						<div className="flex space-x-2">
 							<img
 								src={dfc_logo}

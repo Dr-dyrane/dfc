@@ -27,7 +27,7 @@ class Signup extends Component {
 		return (
 			<AuthContext.Consumer>
 				{(context) => (
-					<div className="flex p-4 flex-col items-center justify-center min-h-screen">
+					<div className="flex overflow-y-scroll p-4 flex-col items-center justify-center min-h-screen">
 						{/* Text Logo */}
 						<div className="flex space-x-2">
 							<img
