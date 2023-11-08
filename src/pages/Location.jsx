@@ -11,7 +11,7 @@ import {
 import Forecast from "../widgets/Forecast";
 import HourlyForecast from "../widgets/HourlyForecast";
 import Current from "../widgets/Current";
-import Recommendation from "../widgets/recommendation";
+import Recommendation from "../widgets/Recommendation";
 
 
 function Location() {
