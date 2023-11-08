@@ -21,7 +21,7 @@ const WeatherPictogram = ({ weatherData }) => {
 				<div className="current">
 					<div className="current-wt">
 						<p>Feels like</p>
-						<p className="text-lg text-white">{temperature} °C</p>
+						<p className="text-base text-white">{temperature} °C</p>
 						<RiTempHotFill size={20} className="text-yellow-400" />
 						<p>The temperature you actually feel</p>
 					</div>
@@ -30,7 +30,7 @@ const WeatherPictogram = ({ weatherData }) => {
 				<div className="current">
 					<div className="current-wt">
 						<p>Humidity</p>
-						<p className="text-lg text-white">{humidity} %</p>
+						<p className="text-base text-white">{humidity} %</p>
 						<RiWaterFlashFill size={20} className="text-blue-300" />
 						<p>The dew point is {dewPoint.toFixed(2)}° right now</p>
 					</div>
@@ -39,7 +39,7 @@ const WeatherPictogram = ({ weatherData }) => {
 				<div className="current">
 					<div className="current-wt">
 						<p>Wind Speed</p>
-						<p className="text-lg text-white">{windSpeed} km/h</p>
+						<p className="text-base text-white">{windSpeed} km/h</p>
 						<RiWindyFill size={20} className="text-purple-400" />
 						<p>Air movement velocity</p>
 					</div>
@@ -48,8 +48,8 @@ const WeatherPictogram = ({ weatherData }) => {
 				<div className="current">
 					<div className="current-wt">
 						<p>Visibility</p>
-						<p className="text-lg text-white">{visibility} m</p>
-						<MdVisibility size={20} className="text-blue-700" />
+						<p className="text-base text-white">{visibility} m</p>
+						<MdVisibility size={20} className="text-cyan-400" />
 						<p >The distance you can see clearly.</p>
 					</div>
 				</div>
