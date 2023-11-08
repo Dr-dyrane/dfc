@@ -17,38 +17,38 @@ const WeatherPictogram = ({ weatherData }) => {
 		<Card className="p-4 text-blue-500 rounded-2xl font-bold bd-dfc shadow-lg">
 			<div className="grid grid-cols-2 gap-4">
 				<div className="current">
-					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-yellow-500">
-							<RiTempHotFill size={38} />
-						</div>
-						<p className="text-md">{temperature} °C</p>
+					<div className="current-wt">
+						<p>Feels like</p>
+						<p className="text-lg text-white">{temperature} °C</p>
+						<RiTempHotFill size={20} className="text-yellow-400" />
+						<p>The temperature you actually feel</p>
 					</div>
 				</div>
 
 				<div className="current">
-					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-blue-400">
-							<RiWaterFlashFill size={38} />
-						</div>
-						<p className="text-md">{humidity} %</p>
+					<div className="current-wt">
+						<p>Humidity</p>
+						<p className="text-lg text-white">{humidity} %</p>
+						<RiWaterFlashFill size={20} className="text-blue-300" />
+						<p>The dew point is 23.79° right now</p>
 					</div>
 				</div>
 
 				<div className="current">
-					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-purple-500">
-							<RiWindyFill size={38} />
-						</div>
-						<p className="text-md">{windSpeed} km/h</p>
+					<div className="current-wt">
+						<p>Wind Speed</p>
+						<p className="text-lg text-white">{windSpeed} km/h</p>
+						<RiWindyFill size={20} className="text-purple-400" />
+						<p>Air movement velocity</p>
 					</div>
 				</div>
 
 				<div className="current">
-					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-blue-400">
-							<MdVisibility size={38} className="text-blue-500" />
-						</div>
-						<p className="text-md">{visibility} m</p>
+					<div className="current-wt">
+						<p>Visibility</p>
+						<p className="text-lg text-white">{visibility} m</p>
+						<MdVisibility size={20} className="text-blue-700" />
+						<p >The distance you can see clearly.</p>
 					</div>
 				</div>
 			</div>

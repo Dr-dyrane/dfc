@@ -69,7 +69,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white m-4">
-					<Card className="p-4 md:p-16 rounded-2xl bd-dfc max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="p-4 rounded-2xl bd-dfc max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 					<Title className="text-center mb-3 text-blue-500 text-lg font-bold">
 							Current Weather
 						</Title>

@@ -29,7 +29,10 @@
       @apply bg-gradient-to-br from-blue-200 to-purple-200;
     }
     .current {
-      @apply p-4 rounded-2xl font-bold border border-blue-400 shadow-md
+      @apply p-4 rounded-2xl font-bold border border-blue-400 shadow-md bg-blue-500
+    }
+    .current-wt {
+      @apply flex flex-col items-start justify-between space-y-1 text-xs text-gray-300
     }
   }
   
