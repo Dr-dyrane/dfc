@@ -101,7 +101,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white m-4">
-					<Card className="p-4 rounded-2xl max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
+					<Card className="p-4 bd-dfc rounded-2xl max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						<Title className="text-center text-lg mb-3 font-bold text-blue-500">
 							Next 6 Days Forecaset
 						</Title>
