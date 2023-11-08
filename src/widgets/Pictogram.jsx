@@ -14,9 +14,9 @@ const WeatherPictogram = ({ weatherData }) => {
 	const visibility = weatherData.current.visibility;
 
 	return (
-		<Card className="p-4 bg-blue-400 rounded-2xl font-bold shadow-lg text-slate-100">
+		<Card className="p-4 text-blue-500 rounded-2xl font-bold bd-dfc shadow-lg">
 			<div className="grid grid-cols-2 gap-4">
-				<div className="p-4 rounded-2xl font-bold">
+				<div className="current">
 					<div className="flex flex-col items-center justify-between space-y-4">
 						<div className="text-2xl text-yellow-500">
 							<RiTempHotFill size={38} />
@@ -25,16 +25,16 @@ const WeatherPictogram = ({ weatherData }) => {
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold">
+				<div className="current">
 					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-blue-300">
+						<div className="text-2xl text-blue-400">
 							<RiWaterFlashFill size={38} />
 						</div>
 						<p className="text-md">{humidity} %</p>
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold">
+				<div className="current">
 					<div className="flex flex-col items-center justify-between space-y-4">
 						<div className="text-2xl text-purple-500">
 							<RiWindyFill size={38} />
@@ -43,7 +43,7 @@ const WeatherPictogram = ({ weatherData }) => {
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold">
+				<div className="current">
 					<div className="flex flex-col items-center justify-between space-y-4">
 						<div className="text-2xl text-blue-400">
 							<MdVisibility size={38} className="text-blue-500" />

@@ -35,7 +35,7 @@ const Forecast = ({ weatherData }) => {
 	});
 
 	return (
-		<div className="p-1">
+		<Card className="p-4 rounded-2xl bd-dfc text-blue-500 shadow-md">
 			{dailyForecasts.slice(2).map((forecast, index) => (
 				<div
 					key={index}
@@ -46,7 +46,7 @@ const Forecast = ({ weatherData }) => {
 					</div>
 					<div className="col-span-2">
 						<h3 className="text-lg font-semibold">{forecast.day}</h3>
-						<p className="text-gray-500">{forecast.weatherDescription}</p>
+						<p className="text-gray-500 text-xs">{forecast.weatherDescription}</p>
 					</div>
 					<div className="col-span-2 grid grid-cols-2 text-right justify-center items-center">
 						<p className="text-lg font-semibold">
@@ -58,7 +58,7 @@ const Forecast = ({ weatherData }) => {
 					</div>
 				</div>
 			))}
-		</div>
+		</Card>
 	);
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { translateWeatherCode } from "../utils/weatherCodeTranslator";
 import { translateToIcon } from "../utils/WeatherCodeToIcon";
+import { Card } from "@tremor/react";
 
 const HourlyForecast = ({ weatherData }) => {
   if (
@@ -33,7 +34,7 @@ const HourlyForecast = ({ weatherData }) => {
   );
 
   return (
-    <div className="p-1">
+    <Card className="p-4 bd-dfc text-blue-900 rounded-2xl shadow-lg">
       <div className="hourly-forecast-container">
         {hourlyForecasts.map((forecast, index) => (
           <div
@@ -45,7 +46,7 @@ const HourlyForecast = ({ weatherData }) => {
             </div>
             <div className="col-span-3">
               <h3 className="text-md font-semibold">{forecast.time}</h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 text-xs">
                 {forecast.weatherDescription}
               </p>
             </div>
@@ -57,7 +58,7 @@ const HourlyForecast = ({ weatherData }) => {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -4,7 +4,7 @@
 
 .hourly-forecast-container {
 
-    max-height: 320px; /* Adjust the height as needed */
+    max-height: 265px; /* Adjust the height as needed */
     overflow-x: auto;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -27,6 +27,9 @@
   @layer components {
     .bd-dfc {
       @apply bg-gradient-to-br from-blue-200 to-purple-200;
+    }
+    .current {
+      @apply p-4 rounded-2xl font-bold border border-blue-400 shadow-md
     }
   }
   
