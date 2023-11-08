@@ -13,6 +13,8 @@ const WeatherPictogram = ({ weatherData }) => {
 	const windSpeed = weatherData.current.windspeed_10m;
 	const visibility = weatherData.current.visibility;
 
+	const dewPoint = temperature - (100 - humidity) / 5;
+
 	return (
 		<Card className="p-4 text-blue-500 rounded-2xl font-bold bd-dfc shadow-lg">
 			<div className="grid grid-cols-2 gap-4">
@@ -30,7 +32,7 @@ const WeatherPictogram = ({ weatherData }) => {
 						<p>Humidity</p>
 						<p className="text-lg text-white">{humidity} %</p>
 						<RiWaterFlashFill size={20} className="text-blue-300" />
-						<p>The dew point is 23.79° right now</p>
+						<p>The dew point is {dewPoint.toFixed(2)}° right now</p>
 					</div>
 				</div>
 
