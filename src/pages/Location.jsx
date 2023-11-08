@@ -4,7 +4,7 @@ import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictog
 import { Card, Subtitle, Text, Title } from "@tremor/react";
 import Pill from "../widgets/Pill";
 import { AuthContext } from "../hooks/AuthProvider";
-import { MdOutlineLocationSearching } from "react-icons/md";
+import { TiLocation } from "react-icons/ti";
 import {
 	fetchWeatherData,
 	startFetchingWeatherPeriodically,
@@ -59,7 +59,7 @@ function Location() {
 						<div className="md:py-16 md:space-y-4">
 							<Text className="font-bold flex flex-row items-center justify-center text-3xl sm:text-4xl text-center">
 								{name}
-								<MdOutlineLocationSearching className="text-3xl ml-2" />
+								<TiLocation className="text-3xl ml-2" />
 							</Text>
 							<Pill weatherData={weatherData} />
 							<Subtitle className="text-xs mt-1 text-center font-bold">
@@ -69,8 +69,7 @@ function Location() {
 					</Card>
 				</div>
 				<div className="text-white p-4">
-					<Card className="md:p-16 rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
-					<Title className="text-center text-lg font-bold">Current Weather</Title>
+					<Card className="md:p-16 rounded-2xl bg-dfc max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 						{weatherData ? (
 							<div>
 								<WeatherPictogram weatherData={weatherData} />
@@ -78,11 +77,16 @@ function Location() {
 						) : (
 							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
 						)}
+						<Title className="text-center mt-3 text-black text-lg font-bold mb-3">
+							Current Weather
+						</Title>
 					</Card>
 				</div>
 				<div className="text-white p-4">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
-					<Title className="text-center text-lg font-bold">Hourly Forecaset</Title>
+						<Title className="text-center text-lg font-bold">
+							Hourly Forecaset
+						</Title>
 						{weatherData ? (
 							<div>
 								<HourlyForecast weatherData={weatherData} />
@@ -94,7 +98,9 @@ function Location() {
 				</div>
 				<div className="text-white p-4">
 					<Card className="rounded-2xl bg-slate-900 max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
-					<Title className="text-center text-lg font-bold">Next 6 Days Forecaset</Title>
+						<Title className="text-center text-lg font-bold">
+							Next 6 Days Forecaset
+						</Title>
 						{weatherData ? (
 							<div>
 								<Forecast weatherData={weatherData} />

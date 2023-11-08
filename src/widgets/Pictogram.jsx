@@ -1,6 +1,7 @@
 import React from "react";
 import { RiTempHotFill, RiWaterFlashFill, RiWindyFill } from "react-icons/ri";
 import { MdVisibility } from "react-icons/md";
+import { Card } from "@tremor/react";
 
 const WeatherPictogram = ({ weatherData }) => {
 	if (!weatherData) {
@@ -13,45 +14,45 @@ const WeatherPictogram = ({ weatherData }) => {
 	const visibility = weatherData.current.visibility;
 
 	return (
-		<div className="p-2 m-2 rounded-2xl font-bold shadow-l">
+		<Card className="p-4 bg-blue-400 rounded-2xl font-bold shadow-lg text-slate-100">
 			<div className="grid grid-cols-2 gap-4">
-				<div className="p-4 rounded-2xl font-bold shadow-lg ">
+				<div className="p-4 rounded-2xl font-bold">
 					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-yellow-400">
+						<div className="text-2xl text-yellow-500">
 							<RiTempHotFill size={38} />
 						</div>
 						<p className="text-md">{temperature} °C</p>
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold shadow-lg ">
+				<div className="p-4 rounded-2xl font-bold">
 					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-blue-400">
+						<div className="text-2xl text-blue-300">
 							<RiWaterFlashFill size={38} />
 						</div>
 						<p className="text-md">{humidity} %</p>
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold shadow-lg ">
+				<div className="p-4 rounded-2xl font-bold">
 					<div className="flex flex-col items-center justify-between space-y-4">
-						<div className="text-2xl text-purple-400">
+						<div className="text-2xl text-purple-500">
 							<RiWindyFill size={38} />
 						</div>
 						<p className="text-md">{windSpeed} km/h</p>
 					</div>
 				</div>
 
-				<div className="p-4 rounded-2xl font-bold shadow-lg ">
+				<div className="p-4 rounded-2xl font-bold">
 					<div className="flex flex-col items-center justify-between space-y-4">
 						<div className="text-2xl text-blue-400">
-							<MdVisibility size={38} style={{ color: "blue" }} />
+							<MdVisibility size={38} className="text-blue-500" />
 						</div>
 						<p className="text-md">{visibility} m</p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Card>
 	);
 };
 
