@@ -65,7 +65,7 @@ function Location() {
 							</Text>
 							<Info weatherData={weatherData} />
 							<Recommendation weatherData={weatherData}/>
-							<Subtitle className="text-xs mt-1 text-center text-gray-600 font-bold">
+							<Subtitle className="text-xs mt-2 text-center text-gray-600 font-bold">
 								{formattedDate}
 							</Subtitle>
 							
