@@ -2,7 +2,7 @@ import React from "react";
 import { translateWeatherCode } from "../utils/weatherCodeTranslator";
 import { translateToIcon } from "../utils/WeatherCodeToIcon";
 
-const Pill = ({ weatherData }) => {
+const Info = ({ weatherData }) => {
 	if (!weatherData) {
 		return null;
 	}
@@ -28,4 +28,4 @@ const Pill = ({ weatherData }) => {
 	);
 };
 
-export default Pill;
+export default Info;

@@ -3,7 +3,7 @@ import { RiTempHotFill, RiWaterFlashFill, RiWindyFill } from "react-icons/ri";
 import { MdVisibility } from "react-icons/md";
 import { Card } from "@tremor/react";
 
-const WeatherPictogram = ({ weatherData }) => {
+const Current = ({ weatherData }) => {
 	if (!weatherData) {
 		return null;
 	}
@@ -58,4 +58,4 @@ const WeatherPictogram = ({ weatherData }) => {
 	);
 };
 
-export default WeatherPictogram;
+export default Current;

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import WeatherPictogram from "../widgets/Pictogram"; // Import the WeatherPictogram component
 import { Card, Subtitle, Text, Title } from "@tremor/react";
-import Pill from "../widgets/Pill";
+import Info from "../widgets/Info";
 import { AuthContext } from "../hooks/AuthProvider";
 import { TiLocation } from "react-icons/ti";
 import {
@@ -11,6 +10,7 @@ import {
 } from "../api/WeatherData";
 import Forecast from "../widgets/Forecast";
 import HourlyForecast from "../widgets/HourlyForecast";
+import Current from "../widgets/Current";
 
 function Location() {
 	const { name, latitude, longitude } = useParams();
@@ -61,7 +61,7 @@ function Location() {
 								{name}
 								<TiLocation className="text-3xl ml-2" />
 							</Text>
-							<Pill weatherData={weatherData} />
+							<Info weatherData={weatherData} />
 							<Subtitle className="text-xs mt-1 text-center font-bold">
 								{formattedDate}
 							</Subtitle>
@@ -75,7 +75,7 @@ function Location() {
 						</Title>
 						{weatherData ? (
 							<div>
-								<WeatherPictogram weatherData={weatherData} />
+								<Current weatherData={weatherData} />
 							</div>
 						) : (
 							<div className="w-10 h-10 m-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
