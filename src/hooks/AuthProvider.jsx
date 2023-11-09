@@ -101,6 +101,10 @@ class AuthProvider extends Component {
 		this.setState({ isOfflineModalOpen: false });
 	};
 
+	clearError = () => {
+		this.setState({ error: null });
+	}
+
 	handleLogin = async (email, password) => {
 		if (!this.isValidEmail(email)) {
 			this.setState({ error: "Invalid email address" });
@@ -199,7 +203,6 @@ class AuthProvider extends Component {
 			isRegistered,
 			isOnline,
 			isOfflineModalOpen,
-			e,
 		} = this.state;
 		const { children } = this.props;
 		const isLogged = localStorage.getItem("isLoggedIn") === "true";
@@ -214,6 +217,7 @@ class AuthProvider extends Component {
 			handleLogin: this.handleLogin,
 			handleLogout: this.handleLogout,
 			handleGoogleLogin: this.handleGoogleLogin,
+			clearError: this.clearError,
 		};
 
 		if (loadingInitial) {

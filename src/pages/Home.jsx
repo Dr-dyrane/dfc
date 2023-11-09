@@ -5,20 +5,22 @@ import { Card, Divider, Subtitle, Text } from "@tremor/react";
 import CityPicker from "../components/CityPicker";
 
 class Home extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			dfc: [],
 		};
+		this.navigate = this.props.navigate;
 	}
 
 	componentDidMount() {
 		// Add an authentication listener to ensure Firebase is initialized
 		this.auth = getAuth();
 		onAuthStateChanged(this.auth, (user) => {
-			if (user) {
+			if (!user) {
 				// User is authenticated, fetch doits from Firestore
 				//console.log(user);
+				this.navigate("/");
 			}
 		});
 	}

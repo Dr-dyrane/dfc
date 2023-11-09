@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../hooks/AuthProvider"; // Import the AuthContext from your actual file path
 import { FcGoogle } from "react-icons/fc";
@@ -12,6 +13,18 @@ class Login extends Component {
 			password: "",
 		};
 		this.navigate = this.props.navigate;
+	}
+
+	componentDidMount() {
+		// Add an authentication listener to ensure Firebase is initialized
+		this.auth = getAuth();
+		onAuthStateChanged(this.auth, (user) => {
+			if (user) {
+				// User is authenticated, fetch doits from Firestore
+				//console.log(user);
+				this.navigate("/");
+			}
+		});
 	}
 
 	handleEmailChange = (e) => {
@@ -57,7 +70,7 @@ class Login extends Component {
 								onClick={() => {
 									context
 										.handleLogin(email, password)
-										.then(() => this.navigate("/"));
+										.then(() => this.navigate("/home"));
 								}} // Use the handleLogin function from the context
 								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
@@ -72,7 +85,7 @@ class Login extends Component {
 								onClick={() => {
 									context
 										.handleGoogleLogin(email, password)
-										.then(() => this.navigate("/"));
+										.then(() => this.navigate("/home"));
 								}}
 								className="w-full border border-slate-700 mt-3 flex justify-center bg-none text-black font-semibold py-2.5 rounded-xl hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 							>

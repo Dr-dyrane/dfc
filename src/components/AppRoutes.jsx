@@ -3,28 +3,32 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Landing from "../pages/Landing";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Location from '../pages/Location';
 import Signup from "../pages/Signup";
-import Location from '../pages/Location'; 
 
+// AppRoutes component manages the routing for different pages
 function AppRoutes(props) {
 	const navigate = useNavigate();
 	const { user, isLogged } = props;
 
-	return (
-		<Routes>
-			{user || isLogged ? (
-				<>
-					<Route path="/" element={<Home />} />
-					<Route path="/location/:name/:latitude/:longitude" element={<Location />} />
-				</>
-			) : (
-				<Route path="/" element={<Landing user={user} isLogged={isLogged} />} />
-			)}
-			<Route path="/login" element={<Login navigate={navigate} />} />
-			<Route path="/location/:name/:latitude/:longitude" element={<Location />} />
-			<Route path="/signup" element={<Signup navigate={navigate} />} />
-		</Routes>
-	);
+  return (
+    <Routes>
+      {/* Landing Page */}
+      <Route path="/" element={<Landing user={user} isLogged={isLogged} navigate={navigate}/>} />
+
+      {/* Home Page */}
+      <Route path="/home" element={<Home navigate={navigate}/>} />
+
+      {/* Login Page */}
+      <Route path="/login" element={<Login navigate={navigate}/>} />
+
+      {/* Location Page with dynamic parameters */}
+      <Route path="/location/:name/:latitude/:longitude" element={<Location />} />
+
+      {/* Signup Page */}
+      <Route path="/signup" element={<Signup navigate={navigate} />} />
+    </Routes>
+  );
 }
 
 export default AppRoutes;

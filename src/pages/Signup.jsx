@@ -57,7 +57,7 @@ class Signup extends Component {
 								onClick={() => {
 									context
 										.handleSignup(email, password)
-										.then(() => this.navigate("/"));
+										.then(() => this.navigate("/home"));
 								}} // Use the handleSignup function from the context
 								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
@@ -75,7 +75,7 @@ class Signup extends Component {
 									? "Account registration successful, proceed to "
 									: "Already have an account? "}
 								<Link
-									to={context.isRegistered || context.user ? "/" : "/login"}
+									to={context.isRegistered || context.user ? "/home" : "/login"}
 									className="text-blue-400 hover:underline"
 								>
 									{context.isRegistered || context.user ? "Home" : "Login"}

@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App.jsx";
-import { AuthProvider } from "./hooks/AuthProvider.jsx";
 import "./assets/index.css";
-import { inject } from '@vercel/analytics';
+import { inject } from "@vercel/analytics";
 
 //inject();
 
@@ -16,9 +15,7 @@ if (!rootElement._reactRootContainer) {
 	function Main() {
 		return (
 			<React.StrictMode>
-				<AuthProvider>
-					<App />
-				</AuthProvider>
+				<App />
 			</React.StrictMode>
 		);
 	}
