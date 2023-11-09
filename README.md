@@ -34,7 +34,7 @@ This project was a labor of love, a testament to the dedication of a human behin
 
 ![dfc_dashboard](public/dfc_dashboard.png)
 
-## Dashboard landing page screenshot
+## Landing page screenshot
 
 ![dfc_landing](public/dfc_landing.png)
 
