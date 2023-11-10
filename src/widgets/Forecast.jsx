@@ -35,7 +35,7 @@ const Forecast = ({ weatherData }) => {
 	});
 
 	return (
-		<Card className="p-4 rounded-2xl bd-dfc text-blue-500 shadow-md">
+		<Card className="p-4 rounded-2xl bd-dfc text-blue-500 shadow-md forecast-card">
 			{dailyForecasts.slice(1).map((forecast, index) => (
 				<div
 					key={index}

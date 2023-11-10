@@ -24,6 +24,29 @@
     background-color: darkgrey; /* Color of the track */
   }
 
+
+  .forecast-card {
+
+    max-height: 296px; /* Adjust the height as needed */
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: darkgrey lightgrey;
+  }
+  
+  .forecast-card::-webkit-scrollbar {
+    width: 1px; /* Adjust the width of the scrollbar */
+  }
+  
+  .forecast-card::-webkit-scrollbar-thumb {
+    background-color: lightgrey; /* Color of the thumb */
+    border-radius: 1px; /* Rounded corners for the thumb */
+  }
+  
+  .forecast-card::-webkit-scrollbar-track {
+    background-color: darkgrey; /* Color of the track */
+  }
+
   @layer components {
     .bd-dfc {
       @apply bg-gradient-to-br from-blue-200 to-purple-200;
