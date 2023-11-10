@@ -12,28 +12,6 @@ class Landing extends Component {
 			<AuthContext.Consumer>
 				{(context) => (
 					<div className="bg-gradient-to-br from-blue-200 to-purple-200 bg-cover font-bold h-screen flex flex-col justify-center items-center p-8 relative">
-						{context.error ? (
-							<div className="absolute top-0 min-h-screen w-screen flex justify-center items-center bd-dfc">
-								<div className="p-4 rounded-2xl w-[350px] h-[300px] shadow-md relative items-center justify-center flex flex-col bg-purple-400/20">
-									<button
-									className="p-4 top-4 right-2 absolute"
-										onClick={() => context.clearError()}><RiCloseCircleFill size={28}/></button>
-									<p className=" text-red-500 text-center text-xl">
-										{context.error}
-									</p>
-									<p className=" text-slate-700 text-center">
-										Please go back to continue{" "}
-										<Link to="/login">
-											<span className="text-blue-500">loging in</span>
-										</Link>{" "}
-										or{" "}
-										<Link to="/signup">
-											<span className="text-blue-700">signing up</span>
-										</Link>
-									</p>
-								</div>
-							</div>
-						) : null}
 						<div className="flex flex-col">
 							<div className="items-center justify-center">
 								<div className="">

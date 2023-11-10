@@ -20,7 +20,7 @@ class Home extends Component {
 			if (!user) {
 				// User is authenticated, fetch doits from Firestore
 				//console.log(user);
-				this.navigate("/");
+				this.navigate('/login');
 			}
 		});
 	}

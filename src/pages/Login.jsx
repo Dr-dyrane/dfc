@@ -22,7 +22,7 @@ class Login extends Component {
 			if (user) {
 				// User is authenticated, fetch doits from Firestore
 				//console.log(user);
-				this.navigate("/");
+				this.navigate("/home");
 			}
 		});
 	}
@@ -67,11 +67,7 @@ class Login extends Component {
 								className="w-full px-4 py-2.5 mb-4 border rounded-xl focus:outline-none focus:ring focus:ring-slate-500"
 							/>
 							<button
-								onClick={() => {
-									context
-										.handleLogin(email, password)
-										.then(() => this.navigate("/home"));
-								}} // Use the handleLogin function from the context
+								onClick={() => context.handleLogin(email, password)} // Use the handleLogin function from the context
 								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
 								Continue
@@ -82,11 +78,7 @@ class Login extends Component {
 
 							{/* "Login with Google" button */}
 							<button
-								onClick={() => {
-									context
-										.handleGoogleLogin(email, password)
-										.then(() => this.navigate("/home"));
-								}}
+								onClick={() =>context.handleGoogleLogin(email, password)}
 								className="w-full border border-slate-700 mt-3 flex justify-center bg-none text-black font-semibold py-2.5 rounded-xl hover:bg-blue-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
 							>
 								<span className="mr-2">

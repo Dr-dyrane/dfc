@@ -1,17 +1,18 @@
-import React, { Component, createContext } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import {
-	getAuth,
-	onAuthStateChanged,
-	setPersistence,
-	browserSessionPersistence,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	GoogleAuthProvider,
-	signInWithPopup,
-	signOut,
+  getAuth,
+  onAuthStateChanged,
+  setPersistence,
+  browserSessionPersistence,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import LoadingAnimation from "../components/LoadingAnimation";
-import Modal from "react-modal"; // Import react-modal
+import Modal from "react-modal";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -24,225 +25,206 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const AuthContext = createContext({});
 
-class AuthProvider extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			user: null,
-			error: null,
-			loadingInitial: true,
-			loading: false,
-			isRegistered: false,
-			isOnline: navigator.onLine,
-			isOfflineModalOpen: false, // State for showing the offline modal
-			isLogged: false, // New state to track user's logged-in status
-		};
-		this.auth = getAuth(app); // Initialize Firebase auth instance
+const AuthProvider = ({ children }) => {
+  const auth = getAuth(app);
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
+  const [loadingInitial, setLoadingInitial] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isOfflineModalOpen, setIsOfflineModalOpen] = useState(false);
+  const [isLogged, setIsLogged] = useState(localStorage.getItem("isLoggedIn") === "true");
+  const navigate = useNavigate();
+
+  const handleOnline = () => {
+    setIsOnline(true);
+  };
+
+  const handleOffline = () => {
+    setIsOnline(false);
+    setIsOfflineModalOpen(true);
+  };
+
+  const handleCloseOfflineModal = () => {
+    setIsOfflineModalOpen(false);
+  };
+
+  const clearError = () => {
+    setError(null);
+  };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleLogin = async (email, password) => {
+    if (!isValidEmail(email)) {
+      setError("Invalid email address");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user);
+      console.log("User logged in.");
+    } catch (error) {
+      console.error("Error during login:", error.code, error.message);
+      setError(error.message);
+	  if (!error){
+		navigate("/home");
+		//clearError();
 	}
+    } finally {
+      setLoading(false);
+    }
+  };
 
-	componentDidMount() {
-		// Set session persistence
-		setPersistence(this.auth, browserSessionPersistence)
-			.then(() => {
-				// Check Firebase Authentication's login state
-				onAuthStateChanged(this.auth, (user) => {
-					if (user) {
-						// User is logged in
-						this.setState({ user, isLogged: true });
-						localStorage.setItem("isLoggedIn", "true"); // Backup user status to local storage
-					} else {
-						// User is not logged in
-						this.setState({ user: null, isLogged: false });
-						localStorage.removeItem("isLoggedIn"); // Clear user status from local storage
-					}
-					this.setState({ loadingInitial: false });
-				});
-
-				// Check local storage for login state (if available)
-				const localLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-				if (localLoggedIn) {
-					this.setState({ user: true, isLogged: true });
-				}
-			})
-			.catch((error) => {
-				// Handle session persistence error
-				console.error("Error setting session persistence:", error);
-			});
-		// Detect online/offline status changes
-		window.addEventListener("online", this.handleOnline);
-		window.addEventListener("offline", this.handleOffline);
+  const handleGoogleLogin = async () => {
+    try {
+      setLoading(true);
+      const provider = new GoogleAuthProvider();
+      await setPersistence(auth, browserSessionPersistence);
+      const userCredential = await signInWithPopup(auth, provider);
+      setUser(userCredential.user);
+      setError(null);
+    } catch (error) {
+      console.error("Error during Google login:", error);
+      setError(error.message);
+	  if (!error){
+		navigate("/home");
+		//clearError();
 	}
+    } finally {
+      setLoading(false);
+    }
+  };
 
-	componentWillUnmount() {
-		// Remove event listeners when the component unmounts
-		window.removeEventListener("online", this.handleOnline);
-		window.removeEventListener("offline", this.handleOffline);
+  const handleLogout = async () => {
+    setLoading(true);
+    try {
+      await signOut(auth);
+      setUser(null);
+      localStorage.removeItem("isLoggedIn");
+      console.log("User logged out.");
+    } catch (error) {
+      console.error("Error during logout:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSignup = async (email, password) => {
+    if (!isValidEmail(email)) {
+      setError("Invalid email address");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user);
+      console.log("User registered:", user);
+      setIsRegistered(true);
+    } catch (error) {
+      console.error("Error during signup:", error.code, error.message);
+      setError(error.message);
+	  if (!error){
+		navigate("/home");
+		//clearError();
 	}
+    } finally {
+      setLoading(false);
+    }
+  };
 
-	handleOnline = () => {
-		// Implement logic for when the app reconnects to the internet
-		// This could include automatic login, syncing data, etc.
-		this.setState({ isOnline: true });
-	};
+  useEffect(() => {
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            setUser(user);
+            setIsLogged(true);
+            localStorage.setItem("isLoggedIn", "true");
+          } else {
+            setUser(null);
+            setIsLogged(false);
+            localStorage.removeItem("isLoggedIn");
+          }
+          setLoadingInitial(false);
+        });
 
-	handleOffline = () => {
-		// Implement logic for when the app goes offline
-		// You can update the state to indicate offline status here
-		this.setState({ isOnline: false, isOfflineModalOpen: true });
-	};
+        const localLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (localLoggedIn) {
+          setUser(true);
+          setIsLogged(true);
+        }
+      })
+      .catch((error) => {
+        console.error("Error setting session persistence:", error);
+      });
 
-	handleCloseOfflineModal = () => {
-		// Close the offline modal
-		this.setState({ isOfflineModalOpen: false });
-	};
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
 
-	clearError = () => {
-		this.setState({ error: null });
-	}
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, [auth]);
 
-	handleLogin = async (email, password) => {
-		if (!this.isValidEmail(email)) {
-			this.setState({ error: "Invalid email address" });
-			return;
-		}
+  const contextValue = {
+    loading,
+    user,
+    isLogged,
+    error,
+    isRegistered,
+    handleSignup,
+    handleLogin,
+    handleLogout,
+    handleGoogleLogin,
+    clearError,
+  };
 
-		try {
-			this.setState({ loading: true });
-			const userCredential = await signInWithEmailAndPassword(
-				this.auth,
-				email,
-				password
-			);
-			// User logged in successfully
-			const user = userCredential.user;
-			console.log("User logged in.");
-		} catch (error) {
-			// Handle login errors
-			console.error("Error during login:", error.code, error.message);
-			this.setState({ error: error.message });
-		} finally {
-			this.setState({ loading: false });
-		}
-	};
+  if (loadingInitial) {
+    return <LoadingAnimation />;
+  }
 
-	handleGoogleLogin = async () => {
-		try {
-			this.setState({ loading: true });
-			const provider = new GoogleAuthProvider();
-			await setPersistence(this.auth, browserSessionPersistence);
-			const userCredential = await signInWithPopup(this.auth, provider);
-			const user = userCredential.user;
-			this.setState({ user, error: null });
-		} catch (error) {
-			console.error("Error during Google login:", error);
-			this.setState({ error: error.message });
-		} finally {
-			this.setState({ loading: false });
-		}
-	};
+  return (
+    <AuthContext.Provider value={contextValue}>
+      {children}
+      <Modal
+        isOpen={isOfflineModalOpen}
+        ariaHideApp={false}
+        onRequestClose={handleCloseOfflineModal}
+        className="flex rounded-xl p-2 bg-gradient-to-br from-blue-700 to-purple-700 bg-cover items-center justify-centre h-screen"
+      >
+        <div className="p-2 m-20 text-center text-white">
+          <p>You are currently offline. Some features may be limited.</p>
+          <button
+            className="w-full p-2 mt-20 bg-slate-900 text-white rounded-lg shadow-lg hover:bg-slate-700"
+            onClick={handleCloseOfflineModal}
+          >
+            Close
+          </button>
+        </div>
+      </Modal>
+    </AuthContext.Provider>
+  );
+};
 
-	handleLogout = async () => {
-		this.setState({ loading: true });
-		try {
-			await signOut(this.auth);
-			// Handle logout logic and set the user state to null
-			this.setState({ user: null });
-			localStorage.removeItem("isLoggedIn"); // Remove from local storage
-			console.log("User logged out."); // Log logout status
-		} catch (error) {
-			// Handle logout errors
-			console.error("Error during logout:", error);
-		} finally {
-			this.setState({ loading: false });
-		}
-	};
+const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
 
-	isValidEmail = (email) => {
-		// Use a regular expression to validate the email format
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return emailRegex.test(email);
-	};
-
-	handleSignup = async (email, password) => {
-		if (!this.isValidEmail(email)) {
-			this.setState({ error: "Invalid email address" });
-			return;
-		}
-
-		try {
-			this.setState({ loading: true });
-			const userCredential = await createUserWithEmailAndPassword(
-				this.auth,
-				email,
-				password
-			);
-			// User registered successfully
-			const user = userCredential.user;
-			console.log("User registered:", user);
-			this.setState({ isRegistered: true }); // Set isRegistered to true on successful registration
-		} catch (error) {
-			// Handle signup errors
-			console.error("Error during signup:", error.code, error.message);
-			this.setState({ error: error.message });
-		} finally {
-			this.setState({ loading: false });
-		}
-	};
-
-	render() {
-		const {
-			user,
-			error,
-			loadingInitial,
-			loading,
-			isRegistered,
-			isOnline,
-			isOfflineModalOpen,
-		} = this.state;
-		const { children } = this.props;
-		const isLogged = localStorage.getItem("isLoggedIn") === "true";
-
-		const contextValue = {
-			loading,
-			user,
-			isLogged, // Include isLogged in the context value
-			error,
-			isRegistered,
-			handleSignup: this.handleSignup,
-			handleLogin: this.handleLogin,
-			handleLogout: this.handleLogout,
-			handleGoogleLogin: this.handleGoogleLogin,
-			clearError: this.clearError,
-		};
-
-		if (loadingInitial) {
-			// Display a loading indicator while Firebase is checking authentication
-			return <LoadingAnimation />;
-		}
-
-		return (
-			<AuthContext.Provider value={contextValue}>
-				{children}
-				{/* Show the offline modal when offline */}
-				<Modal
-					isOpen={isOfflineModalOpen}
-					ariaHideApp={false}
-					onRequestClose={this.handleCloseOfflineModal}
-					className="flex rounded-xl p-2 bg-gradient-to-br from-blue-700 to-purple-700 bg-cover items-center justify-centre h-screen"
-				>
-					<div className="p-2 m-20 text-center text-white">
-						<p>You are currently offline. Some features may be limited.</p>
-						<button className ="w-full p-2 mt-20 bg-slate-900 text-white rounded-lg shadow-lg hover:bg-slate-700" onClick={this.handleCloseOfflineModal}>Close</button>
-					</div>
-				</Modal>
-			</AuthContext.Provider>
-		);
-	}
-}
-
-export { AuthProvider, AuthContext };
+export { AuthProvider, useAuth, AuthContext };

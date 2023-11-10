@@ -54,11 +54,7 @@ class Signup extends Component {
 								className="w-full px-4 py-2.5 mb-4 border rounded-md focus:outline-none focus:ring focus:ring-slate-500"
 							/>
 							<button
-								onClick={() => {
-									context
-										.handleSignup(email, password)
-										.then(() => this.navigate("/home"));
-								}} // Use the handleSignup function from the context
+								onClick={() => context.handleSignup(email, password)} // Use the handleSignup function from the context
 								className="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-500"
 							>
 								Continue

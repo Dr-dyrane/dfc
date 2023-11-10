@@ -25,7 +25,7 @@ function Location() {
 	// Fetch the initial weather data when the component mounts
 	useEffect(() => {
 		if (!context.user) {
-			navigate("/");
+			navigate("/login");
 		}
 
 		// Fetch weather data from the API
