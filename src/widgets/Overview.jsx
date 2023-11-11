@@ -19,7 +19,7 @@ const Overview = ({ weatherData }) => {
 
 	return (
 		<div className="p-4">
-			<div className="pb-5 text-center">
+			<div className="pb-5 text-center md:text-start">
 				<Text className="text-2xl sm:text-3xl font-black sm:mb-21">
 					Today's Overview
 				</Text>

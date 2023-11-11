@@ -5,6 +5,7 @@ import { Card } from "@tremor/react";
 import UserProfile from "../components/UserProfie";
 import { translateWeatherCode } from "../utils/weatherCodeTranslator";
 import { translateToIcon } from "../utils/WeatherCodeToIcon";
+import Recommendation from "../widgets/Recommendation";
 
 function Sidebar({ name, latitude, longitude, weatherData, onLocationSelect }) {
 	if (!weatherData) {
@@ -68,6 +69,7 @@ function Sidebar({ name, latitude, longitude, weatherData, onLocationSelect }) {
 							{weatherDescription}
 						</p>
 					</div>
+          <Recommendation weatherData={weatherData} />
 				</div>
 			</div>
 			<div className="space-y-2 py-5">
