@@ -34,7 +34,7 @@ const HourlyForecast = ({ weatherData }) => {
   );
 
   return (
-    <Card className="p-4 bd-dfc text-blue-900 rounded-2xl shadow-lg">
+    <Card className="p-4 bd-dfc text-blue-900 rounded-2xl shadow-lg border-b-4 border-blue-900">
       <div className="hourly-forecast-container">
         {hourlyForecasts.slice(6).map((forecast, index) => (
           <div

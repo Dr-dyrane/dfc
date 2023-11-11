@@ -16,7 +16,7 @@ const Current = ({ weatherData }) => {
 	const dewPoint = temperature - (100 - humidity) / 5;
 
 	return (
-		<Card className="p-4 text-blue-500 rounded-2xl font-bold bd-dfc shadow-lg">
+		<Card className="p-4 text-blue-500 border-b-4 border-blue-500 rounded-2xl font-bold bd-dfc shadow-lg">
 			<div className="grid grid-cols-2 gap-4">
 				<div className="current">
 					<div className="current-wt">

@@ -18,7 +18,7 @@ const Overview = ({ weatherData }) => {
 	const winddirection = `${weatherData.current.winddirection_10m.toFixed(1)}°`;
 
 	return (
-		<div className="p-5">
+		<div className="p-4">
 			<div className="pb-5 text-center">
 				<Text className="text-2xl sm:text-3xl font-black sm:mb-21">
 					Today's Overview
@@ -27,7 +27,7 @@ const Overview = ({ weatherData }) => {
 					Last updated at: {formattedDate} ({timezone})
 				</Subtitle>
 			</div>
-			<div className="m-2 mb-10 rounded-xl">
+			<div className="mb-10 rounded-xl">
 				<Callout
 					className="mt-4 text-green-700 border-l-4 border-green-700 bg-green-700/10 rounded-xl"
 					title="Agricultural Recommendation"
@@ -36,7 +36,7 @@ const Overview = ({ weatherData }) => {
 					All systems are currently within their default operating ranges.
 				</Callout>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 m-2">
+			<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
 				<WeatherStat
 					title="Maximum Temperature"
 					metric={MaxTemp}

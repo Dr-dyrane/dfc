@@ -35,7 +35,7 @@ function AppRoutes(props) {
 			{/* Location Page with dynamic parameters */}
 			<Route
 				path="/location/:name/:latitude/:longitude"
-				element={<Location weatherData={weatherData} />}
+				element={<Location weatherData={weatherData} onLocationSelect={onLocationSelect}/>}
 			/>
 
 			{/* Signup Page */}
