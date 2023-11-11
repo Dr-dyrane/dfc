@@ -26,7 +26,7 @@ function HumidityChart({ weatherData }) {
 
 	return (
 		<Card className="rounded-2xl sm:w-[25rem] lg:w-[45rem] xl:w-[81rem]">
-			<Title>Chances of Rain</Title>
+			<Title>Humidity Levels</Title>
 			<AreaChart
 				className="mt-3"
 				data={data}
