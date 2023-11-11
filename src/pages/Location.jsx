@@ -29,8 +29,7 @@ function Location({ weatherData }) {
 	}, [context.user]);
 
 	return (
-		<div className="min-h-screen overflow-y-auto flex-1 sm:flex flex-col items-center justify-center">
-			<Overview weatherData={weatherData}/>
+		<div className="min-h-screen overflow-y-scroll flex-1 sm:flex flex-col items-center justify-center">
 			<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
 				<div className="text-black m-4">
 					<Card className="p-4 md:p-16 bd-dfc rounded-2xl max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
@@ -91,6 +90,7 @@ function Location({ weatherData }) {
 					</Card>
 				</div>
 			</div>
+			<Overview weatherData={weatherData}/>
 		</div>
 	);
 }

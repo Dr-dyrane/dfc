@@ -203,7 +203,7 @@ const AuthProvider = ({ children }) => {
         isOpen={isOfflineModalOpen}
         ariaHideApp={false}
         onRequestClose={handleCloseOfflineModal}
-        className="flex rounded-xl p-2 bg-gradient-to-br from-blue-700 to-purple-700 bg-cover items-center justify-centre h-screen"
+        className="flex rounded-xl p-2 bg-gradient-to-br from-blue-700 to-purple-700 bg-cover items-center justify-center h-screen"
       >
         <div className="p-2 m-20 text-center text-white">
           <p>You are currently offline. Some features may be limited.</p>

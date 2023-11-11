@@ -25,7 +25,7 @@ class App extends Component {
 					<Router>
 						<AuthProvider>
 							<Navbar />
-							<div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-200 to-purple-200 h-screen">
+							<div className="min-h-screen overflow-y-scroll flex flex-col bg-gradient-to-br from-blue-200 to-purple-200">
 								<WeatherProvider
 									latitude={selectedLocation?.latitude}
 									longitude={selectedLocation?.longitude}
