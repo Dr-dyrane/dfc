@@ -16,8 +16,7 @@ function TempChart({ weatherData }) {
 				hour: "numeric",
 				hour12: false,
 			})
-			.slice(0, 24)
-	);
+	).slice(0, 24);
 
 	const data = hourly.map((hour, index) => ({
 		time: hour,
