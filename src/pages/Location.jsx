@@ -14,44 +14,18 @@ import Current from "../widgets/Current";
 import Recommendation from "../widgets/Recommendation";
 
 
-function Location() {
-	const { name, latitude, longitude } = useParams();
-	const [weatherData, setWeatherData] = useState(null);
+function Location({ weatherData }) {
+	const { name } = useParams();
 	const currentDate = new Date();
 	const formattedDate = currentDate.toLocaleString();
 	const context = useContext(AuthContext);
 	const navigate = useNavigate();
 
-	// Fetch the initial weather data when the component mounts
 	useEffect(() => {
 		if (!context.user) {
 			navigate("/login");
 		}
-
-		// Fetch weather data from the API
-		fetchWeatherData(latitude, longitude)
-			.then((data) => {
-				setWeatherData(data);
-			})
-			.catch((error) => {
-				console.error("Error fetching weather data:", error);
-			});
-
-		// Start fetching weather data periodically
-		const intervalId = startFetchingWeatherPeriodically(
-			latitude,
-			longitude,
-			(data) => {
-				setWeatherData(data);
-			},
-			1
-		); // Set the interval time in minutes
-
-		return () => {
-			// Clean up the interval when the component unmounts
-			clearInterval(intervalId);
-		};
-	}, [context.user, latitude, longitude]);
+	}, [context.user]);
 
 	return (
 		<div className="min-h-screen overflow-y-auto flex-1 sm:flex flex-col items-center justify-center">

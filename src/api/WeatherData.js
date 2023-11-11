@@ -9,6 +9,7 @@ export async function fetchWeatherData(latitude, longitude) {
 			throw new Error("Network response was not ok");
 		}
 		const data = await response.json();
+		//console.log(data);
 		return data;
 	} catch (error) {
 		throw new Error("Error fetching weather data: " + error.message);

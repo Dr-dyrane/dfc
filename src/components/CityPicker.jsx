@@ -13,7 +13,7 @@ const options = Country.getAllCountries().map((country) => ({
 	label: country.name,
 }));
 
-function CityPicker() {
+function CityPicker({ onLocationSelect }) {
 	const [selectedCountry, setSelectedCountry] = useState(null);
 	const [isoCode, setIsocode] = useState(null);
 	const [selectedCity, setSelectedCity] = useState(null);
@@ -32,6 +32,7 @@ function CityPicker() {
 
 	const handleSelectedCity = (option) => {
 		setSelectedCity(option);
+		onLocationSelect && onLocationSelect(option?.value);
 		navigate(`/location/${option?.value.name}/${option?.value.latitude}/${option?.value.longitude}`)
 	};
 
