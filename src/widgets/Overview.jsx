@@ -11,11 +11,11 @@ const Overview = ({ weatherData }) => {
 	const weatherDate = new Date(weatherData.current.time);
 	const formattedDate = weatherDate.toLocaleString();
 	const timezone = weatherData.timezone_abbreviation;
-	const MaxTemp = `${weatherData.daily.temperature_2m_max[0].toFixed(1)}°C`;
-	const MinTemp = `${weatherData.daily.temperature_2m_min[0].toFixed(1)}°C`;
+	const MaxTemp = `${weatherData.daily.temperature_2m_max[0].toFixed(1)} °C`;
+	const MinTemp = `${weatherData.daily.temperature_2m_min[0].toFixed(1)} °C`;
 	const UVIndex = `${weatherData.daily.uv_index_max[0].toFixed(1)}`;
 	const windspeed = `${weatherData.current.windspeed_10m.toFixed(1)} m/s`;
-	const winddirection = `${weatherData.current.winddirection_10m.toFixed(1)}°`;
+	const winddirection = `${weatherData.current.winddirection_10m.toFixed(1)} °`;
 
 	return (
 		<div className="p-4">
