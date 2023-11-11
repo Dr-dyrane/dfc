@@ -2,6 +2,7 @@ import React from "react";
 import CityPicker from "../components/CityPicker";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import { Card } from "@tremor/react";
+import UserProfile from "../components/UserProfie";
 
 function Sidebar({ name, latitude, longitude, WeatherData, onLocationSelect }) {
   const currentDate = new Date();
@@ -14,6 +15,7 @@ function Sidebar({ name, latitude, longitude, WeatherData, onLocationSelect }) {
 	return (
 		<div className="bg-slate-900 text-white p-10">
 			<div className="pb-5">
+        <UserProfile/>
 				<h1 className="text-6xl font-bold">{decodeURI(name)}</h1>
 				<p className="text-xs mt-2 text-gray-400">
 					Lat/Long: {latitude}, {longitude}
@@ -25,7 +27,7 @@ function Sidebar({ name, latitude, longitude, WeatherData, onLocationSelect }) {
 			<hr className="my-10" />
 			<div>
 				<div>
-					<p className="">{formattedDate}</p>
+					<p className="xl:text-xl">{formattedDate}</p>
 				</div>
 			</div>
 		</div>

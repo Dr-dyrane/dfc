@@ -30,7 +30,7 @@ function Location({ weatherData, onLocationSelect }) {
 	}, [context.user]);
 
 	return (
-		<div>
+		<div className="flex flex-col xl:flex-row">
 			<Sidebar
 				name={name}
 				latitude={latitude}
@@ -38,8 +38,8 @@ function Location({ weatherData, onLocationSelect }) {
 				weatherData={weatherData}
 				onLocationSelect={onLocationSelect}
 			/>
-			<div className="min-h-screen overflow-y-scroll flex-1 sm:flex flex-col items-center justify-center">
-				<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+			<div className="min-h-screen overflow-y-scroll xl:overflow-x-scroll flex-1 sm:flex flex-col items-center justify-center">
+				<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 xl:gap-24">
 					<div className="text-black m-4">
 						<Card className="p-4 md:p-16 bd-dfc rounded-2xl max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
 							<div className="md:space-y-4">
