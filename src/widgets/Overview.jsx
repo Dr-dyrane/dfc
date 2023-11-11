@@ -36,7 +36,7 @@ const Overview = ({ weatherData }) => {
 					All systems are currently within their default operating ranges.
 				</Callout>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+			<div className="grid grid-cols-1  xl:grid-cols-4 gap-4">
 				<WeatherStat
 					title="Maximum Temperature"
 					metric={MaxTemp}
