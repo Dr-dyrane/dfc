@@ -44,7 +44,7 @@ function Sidebar({ name, latitude, longitude, weatherData, onLocationSelect }) {
 			<div className="pb-5">
 				<UserProfile />
 				<h1 className="text-6xl font-bold">{decodeURI(name)}</h1>
-				<p className="text-xs mt-2 text-gray-400">
+				<p className="text-xs mt-4 ml-1 text-gray-400">
 					Lat/Long: {latitude}, {longitude}
 				</p>
 			</div>

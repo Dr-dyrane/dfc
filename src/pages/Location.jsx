@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Card, Subtitle, Text, Title } from "@tremor/react";
-import Info from "../widgets/Info";
 import { AuthContext } from "../hooks/AuthProvider";
 import { TiLocation } from "react-icons/ti";
 import Forecast from "../widgets/Forecast";
@@ -36,7 +35,7 @@ function Location({ weatherData, onLocationSelect }) {
 			<div className="min-h-screen overflow-y-scroll xl:overflow-x-scroll flex-1 sm:flex flex-col items-center justify-center">
 				<Overview weatherData={weatherData} />
 				<hr className="mb-5" />
-				<Charts />
+				<Charts weatherData={weatherData} />
 				<div className="grid grid-cols-1  xl:grid-cols-3 xl:gap-4">
 					<div className="text-white m-4">
 						<Card className="p-4 rounded-2xl bd-dfc max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">

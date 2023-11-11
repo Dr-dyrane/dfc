@@ -1,8 +1,9 @@
 import React from 'react'
+import TempChart from './charts/TempChart'
 
-function Charts() {
+function Charts({weatherData}) {
   return (
-    <div className='space-y-3'>Charts</div>
+    <div className='space-y-3 p-4'><TempChart weatherData={weatherData}/></div>
   )
 }
 
