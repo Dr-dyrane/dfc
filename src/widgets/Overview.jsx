@@ -25,7 +25,7 @@ const Overview = ({ weatherData, city }) => {
 			}
 		};
 
-		fetchAgriculturalRecommendation();
+		//fetchAgriculturalRecommendation();
 	}, [weatherData, city]);
 
 	if (!weatherData) {

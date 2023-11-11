@@ -64,7 +64,7 @@ function Sidebar({ name, latitude, longitude, weatherData, onLocationSelect }) {
 				<div>
 					<WeatherIcon size={36} />
 					<div className="flex items-center justify-between space-x-10">
-						<p className="text-6xl font-semibold">{temperature} °C</p>
+						<p className="text-5xl sm:text-6xl font-semibold">{temperature} °C</p>
 						<p className="text-right font-extralight text-lg italic">
 							{weatherDescription}
 						</p>

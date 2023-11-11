@@ -10,7 +10,7 @@ const Recommendation = ({ weatherData }) => {
 	const weatherCode = weatherData.current.weathercode;
 	const recommendation = translateRecommendation(weatherCode);
 	return (
-		<Text className="py-4 px-2 text-gray-400 rounded-2xl shadow-md text-start text-md font-semibold">
+		<Text className="py-4 px-1 sm:px-2 text-gray-400 rounded-2xl shadow-md text-start text-md font-semibold">
 			{recommendation}
 		</Text>
 	);
