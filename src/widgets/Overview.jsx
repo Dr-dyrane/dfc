@@ -42,7 +42,7 @@ const Overview = ({ weatherData, city }) => {
 	const winddirection = `${weatherData.current.winddirection_10m.toFixed(1)} °`;
 
 	return (
-		<div className="p-4">
+		<div className="p-4 sm:mt-4 sm:p-0 sm:w-[25rem] lg:w-[45rem] xl:w-[81rem]">
 			<div className="pb-5 text-center md:text-start">
 				<Text className="text-2xl sm:text-3xl font-black sm:mb-21">
 					Today's Overview
