@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Callout, Subtitle, Text } from "@tremor/react";
 import { CheckCircleIcon, ExclamationIcon } from "@heroicons/react/solid";
 import WeatherStat from "./WeatherStat";
+import { POST } from "../api/WeatherSummary";
+import { cleanWeatherData } from "../utils/cleanData";
 
-const Overview = ({ weatherData }) => {
+const Overview = ({ weatherData, city }) => {
+	const [agriculturalRecommendation, setAgriculturalRecommendation] =
+		useState("Stay green.");
+
+	useEffect(() => {
+		const fetchAgriculturalRecommendation = async () => {
+			try {
+				// Clean up the weather data
+				const cleanedData = cleanWeatherData(weatherData, city);
+
+				// Use the cleaned data in the POST function
+				const response = await POST(cleanedData);
+
+				// Set the agricultural recommendation
+				setAgriculturalRecommendation(response);
+			} catch (error) {
+				console.error("Error fetching agricultural recommendation:", error);
+			}
+		};
+
+		fetchAgriculturalRecommendation();
+	}, [weatherData, city]);
+
 	if (!weatherData) {
 		return null;
 	}
@@ -33,7 +57,7 @@ const Overview = ({ weatherData }) => {
 					title="Agricultural Recommendation"
 					icon={CheckCircleIcon}
 				>
-					All systems are currently within their default operating ranges.
+					{agriculturalRecommendation}
 				</Callout>
 			</div>
 			<div className="grid grid-cols-1  xl:grid-cols-4 gap-4">

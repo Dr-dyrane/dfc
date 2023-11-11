@@ -32,7 +32,7 @@ function Location({ weatherData, onLocationSelect }) {
 				onLocationSelect={onLocationSelect}
 			/>
 			<div className="min-h-screen overflow-y-scroll xl:overflow-x-scroll flex-1 sm:flex flex-col items-center justify-center">
-				<Overview weatherData={weatherData} />
+				<Overview weatherData={weatherData} city={name}/>
 				<hr className="mb-5" />
 				<Charts weatherData={weatherData} />
 				<div className="grid grid-cols-1  xl:grid-cols-3 xl:gap-4">
