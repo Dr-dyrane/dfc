@@ -1,12 +1,11 @@
 import React from "react";
 import { Card, AreaChart, Title } from "@tremor/react";
 
-function TempChart({ weatherData }) {
+function HumidityChart({ weatherData }) {
     if (
         !weatherData ||
         !weatherData.hourly ||
-        !Array.isArray(weatherData.hourly.uv_index) ||
-        !Array.isArray(weatherData.hourly.temperature_2m)
+        !Array.isArray(weatherData.hourly.relativehumidity_2m)
       ) {
         return null;
       }
@@ -20,23 +19,23 @@ function TempChart({ weatherData }) {
 
 	const data = hourly.map((hour, index) => ({
 		time: hour,
-		"UV Index": weatherData.hourly.uv_index[index],
-		"Temperature (C)": weatherData.hourly.temperature_2m[index],
+		"Humidity (%)": weatherData.hourly.relativehumidity_2m[index],
 	}));
 
-	const dataFormatter = (number) => `${number} °C`;
+	const dataFormatter = (number) => `${number} %`;
 
 	return (
 		<Card className="rounded-2xl sm:w-[25rem] lg:w-[45rem] xl:w-[81rem]">
-			<Title>Temperature & UV Index</Title>
+			<Title>Chances of Rain</Title>
 			<AreaChart
 				className="mt-3"
 				data={data}
 				showLegend
 				index="time"
-				categories={["Temperature (C)", "UV Index"]}
-				colors={["blue", "rose"]}
+				categories={["Humidity (%)"]}
+				colors={["teal"]}
 				minValue={0}
+				maxValue={100}
 				valueFormatter={dataFormatter}
                 yAxisWidth={45}
 			/>
@@ -44,4 +43,4 @@ function TempChart({ weatherData }) {
 	);
 }
 
-export default TempChart;
+export default HumidityChart;

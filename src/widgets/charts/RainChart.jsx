@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, AreaChart, Title, NumberInput } from "@tremor/react";
+import { Card, AreaChart, Title } from "@tremor/react";
 
 function RainChart({ weatherData }) {
     if (
