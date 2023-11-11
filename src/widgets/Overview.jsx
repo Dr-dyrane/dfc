@@ -27,7 +27,7 @@ const Overview = ({ weatherData }) => {
 					Last updated at: {formattedDate} ({timezone})
 				</Subtitle>
 			</div>
-			<div className=" rounded-xl">
+			<div className="m-2 mb-10 rounded-xl">
 				<Callout
 					className="mt-4 text-green-700 border-l-4 border-green-700 bg-green-700/10 rounded-xl"
 					title="Agricultural Recommendation"
@@ -52,7 +52,7 @@ const Overview = ({ weatherData }) => {
 					{Number(UVIndex) > 5 && (
 						<Callout
 							className="mt-4 text-rose-700 border-l-4 border-rose-700 bg-rose-700/10 rounded-xl"
-							title="The UV is high todsy, be sure to wear SPF!"
+							title="The UV is high today, be sure to wear SPF!"
 							icon={ExclamationIcon}
 						/>
 					)}
