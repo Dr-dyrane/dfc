@@ -12,7 +12,7 @@ const Info = ({ weatherData }) => {
 	const WeatherIcon = translateToIcon(weatherCode);
 
 	return (
-		<div className="flex m-2.5 rounded-2xl font-bold shadow-l items-center h-14 justify-center">
+		<div className="flex m-2.5 rounded-2xl font-bold items-center h-14 justify-center">
 			<div className="text-2xl p-2 px-3 h-14 rounded-l-2xl bg-slate-800 text-white shadow-md shadow-slate-800/50">
 				<WeatherIcon size={36} />
 			</div>
