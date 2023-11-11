@@ -12,6 +12,12 @@ function Sidebar({ name, latitude, longitude, WeatherData, onLocationSelect }) {
     month: "long",
     day: "numeric",
   });
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const currentTime = currentDate.toLocaleString('en-GB', {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
 	return (
 		<div className="bg-slate-900 text-white p-10">
 			<div className="pb-5">
@@ -25,10 +31,12 @@ function Sidebar({ name, latitude, longitude, WeatherData, onLocationSelect }) {
           <CityPicker onLocationSelect={onLocationSelect} />
         </Card>
 			<hr className="my-10" />
-			<div>
+			<div className="mt-5 flex items-center justify-between space-x-10 mb-5">
 				<div>
 					<p className="xl:text-xl">{formattedDate}</p>
+					<p className="xl:text-xl font-extralight">{timezone}</p>
 				</div>
+        <p className="xl:text-xl font-bold uppercase">{currentTime}</p>
 			</div>
 		</div>
 	);
