@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Card, Subtitle, Text, Title } from "@tremor/react";
 import { AuthContext } from "../hooks/AuthProvider";
-import { TiLocation } from "react-icons/ti";
 import Forecast from "../widgets/Forecast";
 import HourlyForecast from "../widgets/HourlyForecast";
 import Current from "../widgets/Current";
@@ -10,10 +9,10 @@ import Overview from "../widgets/Overview";
 import Charts from "../widgets/Charts";
 import Sidebar from "./Sidebar";
 
+export const revalidate = 60;
+
 function Location({ weatherData, onLocationSelect }) {
 	const { name, latitude, longitude } = useParams();
-	const currentDate = new Date();
-	const formattedDate = currentDate.toLocaleString();
 	const context = useContext(AuthContext);
 	const navigate = useNavigate();
 
