@@ -13,7 +13,7 @@ import HourlyForecast from "../widgets/HourlyForecast";
 import Current from "../widgets/Current";
 import Recommendation from "../widgets/Recommendation";
 import Overview from "../widgets/Overview";
-
+import Charts from "../widgets/Charts";
 
 function Location({ weatherData }) {
 	const { name } = useParams();
@@ -39,17 +39,16 @@ function Location({ weatherData }) {
 								<TiLocation className="text-3xl ml-2" />
 							</Text>
 							<Info weatherData={weatherData} />
-							<Recommendation weatherData={weatherData}/>
+							<Recommendation weatherData={weatherData} />
 							<Subtitle className="text-xs mt-2 text-center text-gray-600 font-bold">
 								{formattedDate}
 							</Subtitle>
-							
 						</div>
 					</Card>
 				</div>
 				<div className="text-white m-4">
 					<Card className="p-4 rounded-2xl bd-dfc max-w-3xl shadow-md md:w-[25rem] md:h-[25rem]">
-					<Title className="text-center mb-3 text-blue-500 text-lg font-bold">
+						<Title className="text-center mb-3 text-blue-500 text-lg font-bold">
 							Current Weather
 						</Title>
 						{weatherData ? (
@@ -90,7 +89,9 @@ function Location({ weatherData }) {
 					</Card>
 				</div>
 			</div>
-			<Overview weatherData={weatherData}/>
+			<Overview weatherData={weatherData} />
+			<hr className="mb-5" />
+			<Charts />
 		</div>
 	);
 }
