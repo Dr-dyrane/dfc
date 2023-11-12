@@ -4,10 +4,11 @@ import { CheckCircleIcon, ExclamationIcon } from "@heroicons/react/solid";
 import WeatherStat from "./WeatherStat";
 import { POST } from "../api/WeatherSummary";
 import { cleanWeatherData } from "../utils/cleanData";
+import Recommendation from "./Recommendation";
 
 const Overview = ({ weatherData, city }) => {
 	const [agriculturalRecommendation, setAgriculturalRecommendation] =
-		useState("Stay green.");
+		useState( <Recommendation weatherData={weatherData} />);
 
 	useEffect(() => {
 		const fetchAgriculturalRecommendation = async () => {

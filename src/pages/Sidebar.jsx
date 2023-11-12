@@ -69,7 +69,7 @@ function Sidebar({ name, latitude, longitude, weatherData, onLocationSelect }) {
 							{weatherDescription}
 						</p>
 					</div>
-          <Recommendation weatherData={weatherData} />
+          <div className="text-gray-400"><Recommendation weatherData={weatherData} /></div>
 				</div>
 			</div>
 			<div className="space-y-2 py-5">
